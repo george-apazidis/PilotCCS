@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#002244">
+    <meta name="color-scheme" content="light dark">
+    <title>Sprint 1 - Announcements</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Card styles -->
+    <link rel="stylesheet" href="/components/card/pccs-card.css">
+
+    <!-- List Group styles -->
+    <link rel="stylesheet" href="/components/list-group/list-group.css">
+
+    <!-- Announcements styles -->
+    <link rel="stylesheet" href="/components/announcements/announcements.css">
+
+    <!-- 
+    This method required the Orion Web Components to be installed and updated locally.
+    
+    Step 1. Download the orion package (.tgz file) from the Artifact Repository Browser.
+    Step 2. Extract the package locally in the demo folder.
+
+    For version #, check:
+    \demo\package\package.json ../package/loader/index.js
+     -->
+     <script type="module">
+        import { defineCustomElements } from '/package/loader/index.js';
+        defineCustomElements();
+    </script>
+
+</head>
+<body>
+
+    <div id="announcements">
+        <h2>Announcements</h2>
+        <div class="card card__empty" hidden>No announcements</div>
+        <div class="card card__shadow" >
+            <ul class="list-group">
+                <li class="list-group__item">
+                    <a class="list-group__link" href="#" onclick="currentSlide(1)">COVID-19 latest information
+                        <i class="orion-icon orion-icon-chevron_right"></i>
+                    </a>
+                </li>
+                <li class="list-group__item">
+                    <a class="list-group__link" href="#" onclick="currentSlide(2)">Take the Org Pulse survey:
+                        <i class="orion-icon orion-icon-chevron_right"></i>
+                    </a>
+                </li>
+                <li class="list-group__item">
+                    <a class="list-group__link" href="#" onclick="currentSlide(3)">Flight Ops Town Hall with SVP Bryan Quigley:
+                        <i class="orion-icon orion-icon-chevron_right"></i>
+                    </a>
+                </li>
+                <li class="list-group__item" hidden>
+                    <a class="list-group__link" href="#" onclick="currentSlide(4)">PS Travel for Florida markets:
+                        <i class="orion-icon orion-icon-chevron_right"></i>
+                    </a>
+                </li>
+                <li class="list-group__item" hidden>
+                    <a class="list-group__link" href="#" onclick="currentSlide(5)">CQDL-A
+                        <i class="orion-icon orion-icon-chevron_right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="text-right ">
+            <a class="list-group__see-all-link font-weight-600 js-seeAllAnnouncements" href="#">See all <span class="js-numOfAnnouncements"></span> Announcements</a>
+        </div>
+    </div>
+        
+    <orion-modal id="anouncement-modal" has-cancel-icon is-fullscreen-mobile style="--orion-modal-height-desktop:720px; --orion-modal-max-height-desktop:95%" hidden>
+
+        <div slot="orion-modal-body">
+
+            <div class="js-slideshowItem" >
+                <div class="annoucements__date">11/03/2022</div>
+                <div class="annoucements__title">COVID-19 latest information:</div>
+                <div class="annoucements__body">
+                    <span>Please reference:</span>
+                    <ul class="list--dashed">
+                        <li><a href="#">Pilot Bulletin 22-017</a> for guidance</li>
+                        <li><a href="#">Pilot Bulletin 22-063</a> for face mask requirements and eye protection guidance</li>
+                        <li><a href="#">Pilot Bulletin 22-066</a> for pre-departure COVID-19 testing</li>
+                        <li><a href="#">Content > 09-Covid19 folder</a></li>
+                    </ul>
+                    <p>We encourage you to check <a href="#">Flying Together</a> for the company's latest coronavirus information. International restrictions are available in the Door Code section of Pilot Mobile/Links available in 21-350.</p>
+                        
+                    <p><b>Weekly open mic:</b> Please join EWR Chief Pilot Henry Wilmott and the EWR CPO team for our weekly virtual open mic <b>every Tuesday at 1300 ET</b> utilizing Microsoft Teams. To join Tuesday’s meeting, <a href="#">tap here.</a></p>
+                </div>
+            </div>
+
+            <div class="js-slideshowItem" >
+                <div class="annoucements__date">11/04/2022</div>
+                <div class="annoucements__title">Take the Org Pulse survey:</div>
+                <div class="annoucements__body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non natus aliquid, nostrum sit voluptate a sed ducimus eum eveniet cumque. Eligendi esse error libero, excepturi maxime, illum in consequuntur nobis ipsa atque odio porro.</p>
+                </div>
+            </div>
+
+            <div class="js-slideshowItem" >
+                <div class="annoucements__date">11/04/2022</div>
+                <div class="annoucements__title">Flight Ops Town Hall with SVP Bryan Quigley:</div>
+                <div class="annoucements__body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non natus aliquid, nostrum sit voluptate a sed ducimus eum eveniet cumque. Eligendi esse error libero, excepturi maxime, illum in consequuntur nobis ipsa atque odio porro.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non natus aliquid, nostrum sit voluptate a sed ducimus eum eveniet cumque. Eligendi esse error libero, excepturi maxime, illum in consequuntur nobis ipsa atque odio porro.</p>
+                </div>
+            </div>
+
+            <div class="js-slideshowItem" >
+                <div class="annoucements__date">11/05/2022</div>
+                <div class="annoucements__title">PS Travel for Florida markets:</div>
+                <div class="annoucements__body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non natus aliquid, nostrum sit voluptate a sed ducimus eum eveniet cumque. Eligendi </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Eligendi esse error libero, excepturi maxime, illum in consequuntur nobis ipsa atque odio porro.</p>
+                </div>
+            </div>
+
+            <div class="js-slideshowItem" >
+                <div class="annoucements__date">11/06/2022</div>
+                <div class="annoucements__title">CQDL-A</div>
+                <div class="annoucements__body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non natus aliquid, nostrum sit voluptate a sed ducimus eum eveniet cumque. Eligendi </p>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Eligendi esse error libero, excepturi maxime, illum in consequuntur nobis ipsa atque odio porro.</p>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <span slot="orion-modal-footer-left">
+            <orion-button variant="tertiary" class="js-btnPrevAnouncement" icon-name="chevron_left">Previous</orion-button>
+        </span>
+
+        <span slot="orion-modal-footer-center">
+            <span class="orion-modal__slide-num">
+                <span class="js-currentAnnouncement"></span> of <span class="js-numOfAnnouncements"></span>
+            </span>
+        </span>
+
+        <span slot="orion-modal-footer-right">
+            <orion-button variant="tertiary" class="js-btnNextAnouncement" icon-name="chevron_right" icon-right>Next</orion-button>
+        </span>
+
+    </orion-modal>
+
+    <!-- Announcements script -->
+    <script src="announcements.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+@import '/components/employee-profile/employee-profile.css';
+:root {
+  --header-height-mobile: 60px;
+  --header-height-desktop: 80px;
+}
+
+.pccs-header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--orion-rhapsody-blue, #002244);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--header-height-mobile);
+  z-index: 1;
+  color: var(--orion-white, #fff);
+}
+@media screen and (min-width: 769px) {
+  .pccs-header {
+    z-index: 3;
+  }
+}
+.pccs-header__heading {
+  font-size: 18px;
+  line-height: 24px;
+  flex: 1;
+  text-align: center;
+}
+.pccs-header__logo {
+  height: 32px;
+  margin-left: 24px;
+  display: none;
+}
+.pccs-header__search-btn {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  padding: 18px;
+  margin-left: 13px;
+  color: var(--orion-white, #fff);
+}
+.pccs-header__search-btn .orion-icon {
+  display: flex;
+}
+.pccs-header .back-link {
+  padding: 16px;
+  font-size: 24px;
+}
+.pccs-header:has(.back-link) {
+  padding-right: 56px;
+}
+@media screen and (min-width: 769px) {
+  .pccs-header:has(.back-link) {
+    padding-right: 0;
+  }
+}
+.pccs-header ~ main {
+  margin-top: var(--header-height-mobile);
+}
+
+#mobile-menu-btn {
+  background-color: transparent;
+  border: none;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mobile-menu-btn .orion-icon {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 6px;
+  font-size: 24px;
+  color: var(--orion-white, #fff);
+}
+#mobile-menu-btn .orion-icon[data-count]:after {
+  border-color: var(--orion-rhapsody-blue, #002244);
+}
+
+@media screen and (min-width: 769px) {
+  #mobile-menu-btn {
+    display: none;
+  }
+  .pccs-header {
+    min-height: var(--header-height-desktop);
+  }
+  .pccs-header__heading {
+    font-size: 24px;
+    line-height: 32px;
+    padding: 24px;
+    flex: 1;
+    min-height: var(--header-height-desktop);
+    align-items: center;
+    display: flex;
+  }
+  .pccs-header__search-btn {
+    padding: 0 26px;
+    min-height: var(--header-height-desktop);
+    margin: 0;
+    /* For browsers that don't support :focus-visible */
+    /* Remove :focus styling for browsers that do support :focus-visible */
+    /* Add focus styling back in browsers that do support :focus-visible */
+  }
+  .pccs-header__search-btn:hover {
+    background-color: #334E69;
+  }
+  .pccs-header__search-btn .orion-icon {
+    font-size: 28px;
+  }
+  .pccs-header__search-btn:focus {
+    -webkit-appearance: none;
+    box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, #d8d9eb);
+    outline: none;
+  }
+  .pccs-header__search-btn:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+  .pccs-header__search-btn:focus-visible {
+    -webkit-appearance: none;
+    box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, #d8d9eb);
+    outline: none;
+  }
+  .pccs-header ~ main {
+    margin-top: var(--header-height-desktop);
+  }
+}
+@media screen and (min-width: 1025px) {
+  .pccs-header__logo {
+    display: block;
+  }
+  .pccs-header__logo img {
+    height: 100%;
+  }
+  .pccs-header__heading {
+    display: block;
+    text-align: center;
+  }
+}/*# sourceMappingURL=pccs-header.css.map */

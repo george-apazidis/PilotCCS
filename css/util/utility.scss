@@ -1,0 +1,284 @@
+.font-weight-400 {
+    font-weight: 400 !important;
+}
+
+.font-weight-600 {
+    font-weight: 600 !important;
+}
+
+.font-weight-700 {
+    font-weight: 700 !important;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.list--dashed {
+    list-style-type: none;
+
+    li {
+        position: relative;
+        padding-left: 10px;
+        
+        &:before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+        }
+    }
+}
+
+[hidden] { 
+    display: none !important; 
+}
+
+.hidden-sm {
+    @media screen and (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.hidden-md {
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        display: none !important;
+    }
+}
+
+.hidden-lg {
+    @media screen and (min-width: 1025px) {
+        display: none !important;
+    }
+}
+
+.float-right {
+    margin-left: auto !important;
+}
+
+.jc--between {
+    display: flex;
+    justify-content: space-between;
+
+    > *:not(:last-of-type) {
+        padding-right: 4px;
+    }
+}
+
+.jc--flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+
+    &-center {
+        align-items: center;
+    }
+}
+.font-size-13 {
+    font-size: 13px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}
+
+.color-gray-60 {
+    color: var(--orion-gray-60, #666);
+}
+
+.color-gray-40 {
+    color: var(--orion-gray-40, #999);
+}
+
+.color-red {
+    color: var(--orion-red, #d50032);
+}
+
+.color-orange {
+    color: var(--orion-orange, #f46335);
+}
+
+.color-green {
+    color: var(--orion-green, #208500);
+}
+
+.color-white {
+    color: var(--orion-white, #fff);
+}
+
+.color-black {
+    color: var(--orion-black, #000);
+}
+
+.color-rhapsody-blue {
+    color: var(--orion-rhapsody-blue, #002244);
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.mb-6 {
+    margin-bottom: 6px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mt-4 {
+    margin-top: 4px;
+}
+
+.mt-6 {
+    margin-top: 6px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.ml-4 {
+    margin-left: 4px;
+}
+
+.ml-8 {
+    margin-left: 8px;
+}
+
+.pb-16 {
+    padding-bottom: 16px !important;
+}
+
+.px-10 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bg-orange {
+    background-color: var(--orion-orange, #f46335) !important;
+}
+
+.bg-green {
+    background-color: var(--orion-alert-green, #208500) !important;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+
+.flex-equal-cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+.gap-64 {
+    gap: 64px;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.loading-icon {
+    background-color: #f1f1f0;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 8px;
+
+    > img {
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+.width-100 {
+    width: 100%;
+}
+
+// target any element that contains the data-count attribute
+
+[data-count] {
+    position: relative;
+    display: inline-block;
+
+    &:after {
+        position: absolute;
+        right: -11px;
+        top: -10px;
+        content: attr(data-count);
+        font-size: 10px;
+        font-style: normal;
+        padding: 3px;
+        border-radius: 20px;
+        line-height: 1;
+        color: white;
+        background: var(--orion-alert-red, #d50032);
+        text-align: center;
+        min-width: 20px;
+        border: 2px solid var(--orion-rhapsody-blue-80, #334e69);
+    }
+}

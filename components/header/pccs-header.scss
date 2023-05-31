@@ -1,0 +1,172 @@
+@import '/components/employee-profile/employee-profile.css';
+
+:root {
+    --header-height-mobile: 60px;
+    --header-height-desktop: 80px;
+}
+
+.pccs-header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--orion-rhapsody-blue, #002244);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--header-height-mobile);
+    z-index: 1;
+    color: var(--orion-white, #fff);
+
+    @media screen and (min-width: 769px) {
+        z-index: 3; // used so that employee profile overlaps left nav - if this causes issues with other components such as modals etc, then we can add via JS when menu is opened and remove when closed
+    }
+
+    &__heading {
+        font-size: 18px;
+        line-height: 24px;
+        flex: 1;
+        text-align: center;
+    }
+
+    &__logo {
+        height: 32px;
+        margin-left: 24px;
+        display: none;
+    }
+
+    &__search-btn {
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        padding: 18px;
+        margin-left: 13px;
+        color: var(--orion-white, #fff);
+
+        .orion-icon {
+            display: flex;
+        }
+    }
+
+    .back-link {
+        padding: 16px;
+        font-size: 24px;
+    }
+
+    &:has(.back-link) {
+        padding-right: 56px;
+
+        @media screen and (min-width: 769px) {
+            padding-right: 0;
+        }
+    }
+
+
+    ~ main {
+        margin-top: var(--header-height-mobile);
+    }
+}
+ 
+#mobile-menu-btn {
+    background-color: transparent;
+    border: none;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .orion-icon {
+
+        height: 24px;
+        width: 24px;
+        margin-bottom: 6px;
+        font-size: 24px;
+        color: var(--orion-white, #fff);
+        
+        &[data-count]:after {
+            border-color: var(--orion-rhapsody-blue, #002244);
+        }
+
+    }
+    
+}
+
+
+@media screen and (min-width: 769px) {
+
+    #mobile-menu-btn {
+      display: none;
+    }
+
+    .pccs-header {
+
+        min-height: var(--header-height-desktop);
+
+        &__heading {
+            font-size: 24px;
+            line-height: 32px;
+            padding: 24px;
+            flex: 1;
+            min-height: var(--header-height-desktop);
+            align-items: center;
+            display: flex;
+            
+        }
+
+        &__search-btn
+         {
+            padding: 0 26px;
+            min-height: var(--header-height-desktop);
+            margin: 0;
+
+            &:hover {
+                background-color: #334E69;
+            }
+
+            .orion-icon {
+                font-size: 28px;
+            }
+
+            /* For browsers that don't support :focus-visible */
+            &:focus {
+                -webkit-appearance: none;
+                box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, #d8d9eb);
+                outline: none;
+            }
+
+            /* Remove :focus styling for browsers that do support :focus-visible */
+            &:focus:not(:focus-visible) {
+                box-shadow: none;
+            }
+
+            /* Add focus styling back in browsers that do support :focus-visible */
+            &:focus-visible {
+                -webkit-appearance: none;
+                box-shadow: var(--orion-box-shadow-thicker, 0 0 0 4px) var(--orion-color-focus, #d8d9eb);
+                outline: none;
+            }
+        }
+
+        ~ main {
+            margin-top: var(--header-height-desktop);
+        }
+    }
+
+}
+
+@media screen and (min-width: 1025px) { 
+
+    .pccs-header {
+        &__logo {
+            display: block;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &__heading {
+            display: block;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.card {
+    border-radius: 4px;
+    background-color: #d8d8d8;
+    min-height: 52px;
+    margin-bottom: 16px;
+
+    &__shadow {
+        background-color: #fff;
+        box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.25);
+    }
+
+    &__empty {
+        background-color: transparent;
+        min-height: 24px;
+        font-style: italic;
+        font-size: 17px;
+        color: var(--orion-gray-60, #666);
+        padding-left: 2px;
+    }
+
+    &__header {
+        background-color: #0c2340;
+        padding: 8px 16px;
+    }
+
+    &__title {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+}

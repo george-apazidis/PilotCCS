@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Spotlights</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Feature Spotlights styles -->
+    <link rel="stylesheet" href="feature-spotlights.css">
+
+</head>
+<body>
+
+    <div id="feature-spotlight">
+        <h2>Feature Spotlights</h2>
+        <p class="feature-spotlight--empty js-featEmptyMessage"  hidden>No new Feature Spotlights. Go to <a href="#" class="font-style-normal">Category Placeholder</a> to see all Feature Spotlights.</p>
+        <figure class="js-featSpotlight">
+            <video id='video' class="feature-spotlight__video" controls="controls" preload='none' poster="https://assets.codepen.io/32795/poster.png">
+                <source id='mp4' src="http://media.w3.org/2010/05/sintel/trailer.mp4" type='video/mp4' >
+                <source id='webm' src="http://media.w3.org/2010/05/sintel/trailer.webm" type='video/webm' >
+                <source id='ogv' src="http://media.w3.org/2010/05/sintel/trailer.ogv" type='video/ogg' >
+            </video>
+            <figcaption class="feature-spotlight__figcaption">
+                <div class="feature-spotlight__footer">
+                    <span class="feature-spotlight__title">Calendar Sharing Tutorial</span>
+                    <div class="text-right"><a href="#" class="js-hide-fs">Hide</a> | <a href="/components/feature-spotlights-landing/index.html">View All</a></div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Feature Spotlight script -->
+    <script src="feature-spotlight.js"></script>
+
+</body>
+</html>

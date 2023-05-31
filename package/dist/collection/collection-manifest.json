@@ -1,0 +1,42 @@
+{
+  "entries": [
+    "./components/orion-accordion/orion-accordion.js",
+    "./components/orion-button/orion-button.js",
+    "./components/orion-chip/orion-chip.js",
+    "./components/orion-date-input/orion-date-input.js",
+    "./components/orion-drawer/orion-drawer.js",
+    "./components/orion-link/orion-link.js",
+    "./components/orion-message/orion-message.js",
+    "./components/orion-progress-meter/orion-progress-meter.js",
+    "./components/orion-tabs/orion-tabs.js",
+    "./components/orion-text-input/orion-text-input.js",
+    "./components/orion-checkbox/orion-checkbox.js",
+    "./components/orion-checkbox-group/orion-checkbox-group.js",
+    "./components/orion-date-input/orion-date-calendar-modal/orion-date-calendar-modal.js",
+    "./components/orion-dropdown/orion-dropdown.js",
+    "./components/orion-dropdown-option/orion-dropdown-option.js",
+    "./components/orion-error/orion-error.js",
+    "./components/orion-label/orion-label.js",
+    "./components/orion-list/orion-list.js",
+    "./components/orion-list-item/orion-list-item.js",
+    "./components/orion-modal/orion-modal.js",
+    "./components/orion-note/orion-note.js",
+    "./components/orion-popover/orion-popover.js",
+    "./components/orion-radio-button/orion-radio-button.js",
+    "./components/orion-radio-button-group/orion-radio-button-group.js",
+    "./components/orion-stepper/orion-stepper.js",
+    "./components/orion-tab/orion-tab.js",
+    "./components/orion-tab-panel/orion-tab-panel.js",
+    "./components/orion-textarea/orion-textarea.js",
+    "./components/orion-toggle/orion-toggle.js",
+    "./components/orion-toggle-group/orion-toggle-group.js",
+    "./components/orion-tooltip/orion-tooltip.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.20.0",
+    "typescriptVersion": "4.8.4"
+  },
+  "collections": [],
+  "bundles": []
+}

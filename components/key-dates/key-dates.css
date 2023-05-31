@@ -1,0 +1,37 @@
+.key-dates__progress-indicator {
+  min-width: 59px;
+}
+.key-dates__hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.key-dates__hours-number {
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 3px;
+  font-weight: var(--orion-font-weight-semibold, 600);
+}
+.key-dates__date {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--orion-font-weight-semibold, 600);
+  color: var(--orion-rhapsody-blue, #002244);
+}
+.key-dates__title {
+  font-size: 18px;
+}
+.key-dates__days-left {
+  font-size: 10px;
+  line-height: 1;
+  margin-top: 5px;
+}
+.key-dates__days-left-number {
+  font-size: 14px;
+  font-weight: 700;
+}
+.key-dates__time-remaining {
+  font-size: 13px;
+  color: var(--orion-rhapsody-blue, #002244);
+  margin-top: 2px;
+}/*# sourceMappingURL=key-dates.css.map */

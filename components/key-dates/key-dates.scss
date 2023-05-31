@@ -1,0 +1,48 @@
+.key-dates {
+
+    &__progress-indicator {
+        min-width: 59px;
+    }
+
+    &__hours {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__hours-number {
+        font-size: 46px;
+        line-height: 1;
+        margin-bottom: 3px;
+        font-weight: var(--orion-font-weight-semibold, 600);
+    }
+
+    &__date {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: var(--orion-font-weight-semibold, 600);
+        color: var(--orion-rhapsody-blue, #002244);
+    }
+
+    &__title {
+        font-size: 18px;
+    }
+
+    &__days-left {
+        font-size: 10px;
+        line-height: 1;
+        margin-top: 5px;
+        
+        &-number {
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+
+    &__time-remaining {
+        font-size: 13px;
+        color: var(--orion-rhapsody-blue, #002244);
+        margin-top: 2px;
+    }
+}
+    

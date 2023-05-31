@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#002244">
+    <meta name="color-scheme" content="light dark">
+    <title>Nav Demo page</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Nav styles -->
+    <link rel="stylesheet" href="/components/nav/pccs-nav.css">
+
+    <!-- Header styles -->
+    <link rel="stylesheet" href="/components/header/pccs-header.css">
+
+</head>
+<body>
+    <header class="pccs-header">       
+        <button id="mobile-menu-btn" type="button">
+            <i class="orion-icon orion-icon-menu" data-count="14"></i>
+        </button>
+    </header>
+
+    <main>
+        <nav id="main-nav">
+            <div id="nav-menu"  class="pccs-nav" tabindex="-1" >
+                <div class="pccs-nav-header">
+                    <div class="pccs-nav-header__mobile">
+                        <button type="button" class="pccs-nav__close-btn" aria-label="Close">
+                            <i class="orion-icon orion-icon-close"></i>
+                        </button>
+                        <h3>John Witherspoon</h3>
+                        <div class="uid">U123456</div>
+                        <a href="#" class="pccs-nav-header__link js-open-profile">See profile</a>
+                    </div>
+                    <div class="pccs-nav-header__desktop">
+                        <a href="#" class="nav-collapse">Expand</a>
+                    </div>
+                </div>
+                
+                <div class="pccs-nav__body">
+                    <ul class="pccs-nav__links">
+                        <li>
+                            <a href="#" class="active js-dashboard-link">
+                                <i class="orion-icon orion-icon-home"></i>
+                                <span class="pccs-nav__link">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-at"></i>
+                                <span class="pccs-nav__link">Quicklinks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-email" data-count="14"></i>
+                                <span class="pccs-nav__link">Comm Center</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-calendar"></i>
+                                <span class="pccs-nav__link">Schedule</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-change"></i>
+                                <span class="pccs-nav__link">Trade Center</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/demo/reference-materials/more.html">
+                                <i class="orion-icon orion-icon-more_menu_horizontal"></i>
+                                <span class="pccs-nav__link">More</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pccs-nav__footer">
+                    <a href="#"><span class="icon-sign-out"></span><span class="pccs-nav__footer-link-text">Sign Out</span></a>
+                </div>
+            </div>
+        </nav>
+
+
+    </main>
+
+    <!-- Nav script -->
+    <script  src="/components/nav/nav.js"></script>
+
+    <!-- Employee Profile script -->
+    <script  src="/components/employee-profile/employee-profile.js"></script>
+    
+</body>
+</html>

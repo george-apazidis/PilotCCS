@@ -1,0 +1,23 @@
+.annoucements {
+
+    &__date {
+        font-size: var(--orion-font-size-small, 13px);
+        margin-bottom: 5px;
+    }
+
+    &__title {
+        font-size: var(--orion-font-size-title4, 20px);
+        line-height: var(--orion-line-height-md, 24px);
+        margin: 0 0 var(--orion-space-md, 8px) 0;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    &__body {
+
+        * {
+            font-size: 18px;
+        }
+        
+    }
+}

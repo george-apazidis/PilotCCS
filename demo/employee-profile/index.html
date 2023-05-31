@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#002244">
+    <meta name="color-scheme" content="light dark">
+    <title>Employee Profile</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Nav styles -->
+    <link rel="stylesheet" href="/components/nav/pccs-nav.css">
+
+    <!-- Header styles -->
+    <link rel="stylesheet" href="/components/header/pccs-header.css">
+
+    <!-- Employee profile styles -->
+    <!-- <link rel="stylesheet" href="/components/employee-profile/employee-profile.css"> -->
+
+</head>
+<body>
+    <header class="pccs-header">       
+        <button id="mobile-menu-btn" type="button">
+            <i class="orion-icon orion-icon-menu" data-count="14"></i>
+        </button>
+        
+        <div class="pccs-header__logo"><img src="/assets/United_logo@2x.png" alt="United Arilines logo"></div>
+        <div class="pccs-header__heading">Dashboard</div>
+        <div class="employee-profile__user-wrapper qual-yellow js-profile-btn">
+            <div class="employee-profile__user">
+                <span class="employee-profile__user-name">Henry Wilmott</span>
+                <span class="employee-profile__user-id">U123456</span>
+            </div>
+            <div class="employee-profile__user-icon orion-icon white">
+                <img src="/assets/employee-avatar.jpg" alt="User icon">
+                <span class="icon-qual-indicator-yellow"><span class="path1"></span><span class="path2"></span></span>
+                <span class="icon-qual-indicator-red"><span class="path1"></span><span class="path2"></span></span>
+            </div>
+            <i class="orion-icon orion-icon-chevron_close"></i>
+            <i class="orion-icon orion-icon-chevron_open"></i>
+            <div class="employee-profile-panel js-employee-profile">
+                <div class="employee-profile-panel-header">
+                    <div class="employee-profile-panel-header__heading">Employee Profile</div>
+                    <button type="button" class="js-employee-menu-close employee-profile-panel-header__close-btn" aria-label="Close">
+                        <i class="orion-icon-close color-white"></i>
+                    </button>
+                </div>
+                <div class="employee-profile-panel-body">
+                    <div class="employee-profile-panel-body__header jc--flex-start">
+                        <div class="employee-profile-panel-body__header-photo">
+                            <img src="/assets/employee-avatar.jpg" alt="Henry Wilcott">
+                        </div>
+                        <div>
+                            <div class="employee-profile-panel-body__header-name"><span>Henry</span><span>Wilmott</span></div>
+                            <div class="employee-profile-panel-body__header-details">
+                                <span>U123456</span>
+                                <span>EWR</span>
+                                <span>A320</span>
+                                <span>CA</span>
+                            </div>
+
+                            <div class="employee-profile-panel-body__header-quals--yellow" >
+                                <!-- Qualifications expire in 30 days -->
+                                <span class="icon-qual-indicator-yellow"><span class="path1"></span><span class="path2"></span></span>
+                                <a href="#">One or more qualifications expire in 30 days</a>
+                            </div>
+
+                            <div class="employee-profile-panel-body__header-quals--red">
+                                <!-- Qualifications expired -->
+                                <span class="icon-qual-indicator-red"><span class="path1"></span><span class="path2"></span></span>
+                                <a href="#">One or more qualifications expire in 10 days or are expired</a>
+                            </div>
+
+                            <div class="employee-profile-panel-body__header-quals">
+                                <a href="#">See qualifications</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="employee-profile-panel-body__table">
+                        <div class="jc--between">
+                            <span>Nickname/Preferred Name</span>
+                            <span class="font-weight-600">Henry</span>
+                        </div>
+                        <div class="jc--between">
+                            <span>Company Status</span>
+                            <span class="font-weight-600">Active</span>
+                        </div>
+                        <div class="jc--between">
+                            <span>System Seniority Number</span>
+                            <span class="font-weight-600">1234</span>
+                        </div>
+                        <div class="jc--between">
+                            <span>Base Seniority Number</span>
+                            <span class="font-weight-600">7890</span>
+                        </div>
+                    </div>
+
+                    <a class="employee-profile-panel-body__link" href="#">Update personal info in Flying Together<i class="orion-icon orion-icon-chevron_right"></i></a>
+
+                </div>
+                <div class="employee-profile-panel-footer">
+                    <a href="#" class="employee-profile-panel-footer__link"><span class="icon-sign-out"></span>Sign Out</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <button type="button" class="pccs-header__search-btn" aria-label="Search">
+            <i class="orion-icon orion-icon-search"></i>
+        </button>
+
+
+    </header>
+
+    <main>
+        <nav id="main-nav">
+            <div id="nav-menu"  class="pccs-nav" tabindex="-1" >
+                <div class="pccs-nav-header">
+                    <div class="pccs-nav-header__mobile">
+                        <button type="button" class="pccs-nav__close-btn" aria-label="Close">
+                            <i class="orion-icon orion-icon-close"></i>
+                        </button>
+                        <h3>John Witherspoon</h3>
+                        <div class="uid">U123456</div>
+                        <a href="#" class="pccs-nav-header__link js-open-profile">See profile</a>
+                    </div>
+                    <div class="pccs-nav-header__desktop">
+                        <a href="#" class="nav-collapse">Expand</a>
+                    </div>
+                </div>
+                
+                <div class="pccs-nav__body">
+                    <ul class="pccs-nav__links">
+                        <li>
+                            <a href="#" class="active js-dashboard-link">
+                                <i class="orion-icon orion-icon-home"></i>
+                                <span class="pccs-nav__link">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-at"></i>
+                                <span class="pccs-nav__link">Quicklinks</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-email" data-count="14"></i>
+                                <span class="pccs-nav__link">Comm Center</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-calendar"></i>
+                                <span class="pccs-nav__link">Schedule</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="orion-icon orion-icon-change"></i>
+                                <span class="pccs-nav__link">Trade Center</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/demo/reference-materials/more.html">
+                                <i class="orion-icon orion-icon-more_menu_horizontal"></i>
+                                <span class="pccs-nav__link">More</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pccs-nav__footer">
+                    <a href="#"><span class="icon-sign-out"></span><span class="pccs-nav__footer-link-text">Sign Out</span></a>
+                </div>
+            </div>
+        </nav>
+        <div class="main-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia facere sint obcaecati dicta tempore aperiam omnis. Nisi asperiores necessitatibus placeat impedit suscipit beatae, molestias consequatur sapiente fugit illo nihil neque.</p>
+        </div>
+
+    </main>
+
+    <!-- Nav script -->
+    <script  src="/components/nav/nav.js"></script>
+
+    <!-- Employee Profile script -->
+    <script  src="/components/employee-profile/employee-profile.js"></script>
+
+</body>
+</html>

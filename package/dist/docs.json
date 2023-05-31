@@ -1,0 +1,4829 @@
+{
+  "timestamp": "2023-05-03T16:37:25",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.20.0",
+    "typescriptVersion": "4.8.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/orion-accordion/orion-accordion.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-accordion",
+      "readme": "# orion-accordion\n\nAccordion is a component that allows users to expand and collapse sections of content.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Accordion is a component that allows users to expand and collapse sections of content.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "orion-accordion-header - slot for accordion header content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-accorion-panel - slot for accordion panel content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "chevronLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "chevron-left",
+          "reflectToAttr": false,
+          "docs": "Chevrons are on the right by default",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasContainer",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-container",
+          "reflectToAttr": false,
+          "docs": "Accordion container border",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": false,
+          "docs": "Accordion is closed by default",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "toggle",
+          "detail": "OrionAccordionToggleEventData",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the accordion is toggled",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "orion-accordion-header",
+          "docs": "slot for accordion header content"
+        },
+        {
+          "name": "orion-accorion-panel",
+          "docs": "slot for accordion panel content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-button/orion-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-button",
+      "readme": "# orion-button\n\nButton is a clickable element that can be used to trigger actions.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Button is a clickable element that can be used to trigger actions.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "The disabled state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "The icon name",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconRight",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-right",
+          "reflectToAttr": false,
+          "docs": "The icon position",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "small",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "small",
+          "reflectToAttr": false,
+          "docs": "The small state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "sticky",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "sticky",
+          "reflectToAttr": false,
+          "docs": "The sticky state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The button type",
+          "docsTags": [],
+          "default": "'button'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "The button variant",
+          "docsTags": [],
+          "default": "'secondary'",
+          "values": [
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [
+        {
+          "name": "--orion-button-radius",
+          "annotation": "prop",
+          "docs": "value of the border-radius property"
+        },
+        {
+          "name": "--orion-button-width",
+          "annotation": "prop",
+          "docs": "value of the width property"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "orion-date-calendar-modal",
+        "orion-drawer",
+        "orion-modal"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "orion-date-calendar-modal": [
+          "orion-button"
+        ],
+        "orion-drawer": [
+          "orion-button"
+        ],
+        "orion-modal": [
+          "orion-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/orion-checkbox/orion-checkbox.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-checkbox",
+      "readme": "# orion-checkbox\n\nCheckbox is a component that allows users to select one or more options from a set. Use in conjunction with the `orion-checkbox-group` component to control layout. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Checkbox is a component that allows users to select one or more options from a set. Use in conjunction with the `orion-checkbox-group` component to control layout. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the checkbox label"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "The checked state of the checkbox",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The input name",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; checked: boolean; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "CustomEvent `detail` will be the new value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-checkbox--vertical-align",
+          "annotation": "prop",
+          "docs": "Alignment of checkbox label. Default is flex-start. Can be set to center or flex-end."
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the checkbox label"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-checkbox-group/orion-checkbox-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-checkbox-group",
+      "readme": "# orion-checkbox-group\n\nCheckbox group is a component that controls layout of a group of checkboxes. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Checkbox group is a component that controls layout of a group of checkboxes. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disable all checkboxes in group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "\nThe inline state of the checkbox group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-chip/orion-chip.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-chip",
+      "readme": "# orion-chip\n\nChips are used to communicate important information to the user. They can be used to indicate information, success, warning, or error. Chips can be dismissed by the user.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Chips are used to communicate important information to the user. They can be used to indicate information, success, warning, or error. Chips can be dismissed by the user.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for chip content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "dismissible",
+          "reflectToAttr": true,
+          "docs": "Toggles the ability to dismiss the chip via a close button on right of the chip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-open",
+          "reflectToAttr": true,
+          "docs": "Prop used to show/hide chip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "solidBg",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "solid-bg",
+          "reflectToAttr": false,
+          "docs": "Prop used to to display a solid background color",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"custom\" | \"high\" | \"info\" | \"low\" | \"medium\" | \"success\"",
+          "mutable": true,
+          "attr": "variant",
+          "reflectToAttr": true,
+          "docs": "Stylistic variations for the chip type.\n- **success** - results in a green chip\n- **high** - results in a red chip\n- **medium** - results in an orange chip\n- **low** - results in a yellow chip\n- **info** - results in a blue chip\n- **custom** - results in a custom color chip (see `--orion-chip-color__bg` and `--orion-chip-color__text` css variables)",
+          "docsTags": [],
+          "default": "'info'",
+          "values": [
+            {
+              "value": "custom",
+              "type": "string"
+            },
+            {
+              "value": "high",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "low",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [
+        {
+          "name": "--orion-chip-color__bg",
+          "annotation": "prop",
+          "docs": "HEX color value of the background and border"
+        },
+        {
+          "name": "--orion-chip-color__text",
+          "annotation": "prop",
+          "docs": "HEX color value of the label and close button"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for chip content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-date-input/orion-date-calendar-modal/orion-date-calendar-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-date-calendar-modal",
+      "readme": "# orion-date-calendar-modal\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "dateFormat",
+          "type": "string",
+          "mutable": false,
+          "attr": "date-format",
+          "reflectToAttr": false,
+          "docs": "Format to be used by the date inputs & calendar\nFollows spec at https://flatpickr.js.org/formatting/",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "dates",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Selected dates to show",
+          "docsTags": [],
+          "default": "['', '']",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "firstDateLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "first-date-label",
+          "reflectToAttr": false,
+          "docs": "Label for first date",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "flatpickrConfig",
+          "type": "{ allowInput?: boolean | undefined; allowInvalidPreload?: boolean | undefined; altFormat?: string | undefined; altInput?: boolean | undefined; altInputClass?: string | undefined; animate?: boolean | undefined; appendTo?: HTMLElement | undefined; ariaDateFormat?: string | undefined; autoFillDefaultTime?: boolean | undefined; clickOpens?: boolean | undefined; closeOnSelect?: boolean | undefined; conjunction?: string | undefined; dateFormat?: string | undefined; defaultDate?: DateOption | DateOption[] | undefined; defaultHour?: number | undefined; defaultMinute?: number | undefined; defaultSeconds?: number | undefined; disable?: DateLimit<DateOption>[] | undefined; disableMobile?: boolean | undefined; enable?: DateLimit<DateOption>[] | undefined; enableSeconds?: boolean | undefined; enableTime?: boolean | undefined; errorHandler?: ((e: Error) => void) | undefined; formatDate?: ((date: Date, format: string, locale: Locale) => string) | undefined; getWeek?: ((date: Date) => string | number) | undefined; hourIncrement?: number | undefined; ignoredFocusElements?: HTMLElement[] | undefined; inline?: boolean | undefined; locale?: key | Partial<CustomLocale> | undefined; maxDate?: DateOption | undefined; maxTime?: DateOption | undefined; minDate?: DateOption | undefined; minTime?: DateOption | undefined; minuteIncrement?: number | undefined; mode?: \"range\" | \"single\" | \"multiple\" | \"time\" | undefined; monthSelectorType?: \"static\" | \"dropdown\" | undefined; nextArrow?: string | undefined; noCalendar?: boolean | undefined; now?: DateOption | undefined; onChange?: Hook | Hook[] | undefined; onClose?: Hook | Hook[] | undefined; onDayCreate?: Hook | Hook[] | undefined; onDestroy?: Hook | Hook[] | undefined; onKeyDown?: Hook | Hook[] | undefined; onMonthChange?: Hook | Hook[] | undefined; onOpen?: Hook | Hook[] | undefined; onParseConfig?: Hook | Hook[] | undefined; onReady?: Hook | Hook[] | undefined; onValueUpdate?: Hook | Hook[] | undefined; onYearChange?: Hook | Hook[] | undefined; onPreCalendarPosition?: Hook | Hook[] | undefined; parseDate?: ((date: string, format: string) => Date) | undefined; plugins?: Plugin<{}>[] | undefined; position?: \"auto\" | \"above\" | \"below\" | \"auto left\" | \"auto center\" | \"auto right\" | \"above left\" | \"above center\" | \"above right\" | \"below left\" | \"below center\" | \"below right\" | ((self: Instance, customElement: HTMLElement | undefined) => void) | undefined; positionElement?: Element | undefined; prevArrow?: string | undefined; shorthandCurrentMonth?: boolean | undefined; static?: boolean | undefined; showMonths?: number | undefined; time_24hr?: boolean | undefined; weekNumbers?: boolean | undefined; wrap?: boolean | undefined; }",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Config for flatpickr",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "{ allowInput?: boolean"
+            },
+            {
+              "type": "undefined; allowInvalidPreload?: boolean"
+            },
+            {
+              "type": "undefined; altFormat?: string"
+            },
+            {
+              "type": "undefined; altInput?: boolean"
+            },
+            {
+              "type": "undefined; altInputClass?: string"
+            },
+            {
+              "type": "undefined; animate?: boolean"
+            },
+            {
+              "type": "undefined; appendTo?: HTMLElement"
+            },
+            {
+              "type": "undefined; ariaDateFormat?: string"
+            },
+            {
+              "type": "undefined; autoFillDefaultTime?: boolean"
+            },
+            {
+              "type": "undefined; clickOpens?: boolean"
+            },
+            {
+              "type": "undefined; closeOnSelect?: boolean"
+            },
+            {
+              "type": "undefined; conjunction?: string"
+            },
+            {
+              "type": "undefined; dateFormat?: string"
+            },
+            {
+              "type": "undefined; defaultDate?: DateOption"
+            },
+            {
+              "type": "DateOption[]"
+            },
+            {
+              "type": "undefined; defaultHour?: number"
+            },
+            {
+              "type": "undefined; defaultMinute?: number"
+            },
+            {
+              "type": "undefined; defaultSeconds?: number"
+            },
+            {
+              "type": "undefined; disable?: DateLimit<DateOption>[]"
+            },
+            {
+              "type": "undefined; disableMobile?: boolean"
+            },
+            {
+              "type": "undefined; enable?: DateLimit<DateOption>[]"
+            },
+            {
+              "type": "undefined; enableSeconds?: boolean"
+            },
+            {
+              "type": "undefined; enableTime?: boolean"
+            },
+            {
+              "type": "undefined; errorHandler?: ((e: Error) => void)"
+            },
+            {
+              "type": "undefined; formatDate?: ((date: Date, format: string, locale: Locale) => string)"
+            },
+            {
+              "type": "undefined; getWeek?: ((date: Date) => string"
+            },
+            {
+              "type": "number)"
+            },
+            {
+              "type": "undefined; hourIncrement?: number"
+            },
+            {
+              "type": "undefined; ignoredFocusElements?: HTMLElement[]"
+            },
+            {
+              "type": "undefined; inline?: boolean"
+            },
+            {
+              "type": "undefined; locale?: key"
+            },
+            {
+              "type": "Partial<CustomLocale>"
+            },
+            {
+              "type": "undefined; maxDate?: DateOption"
+            },
+            {
+              "type": "undefined; maxTime?: DateOption"
+            },
+            {
+              "type": "undefined; minDate?: DateOption"
+            },
+            {
+              "type": "undefined; minTime?: DateOption"
+            },
+            {
+              "type": "undefined; minuteIncrement?: number"
+            },
+            {
+              "type": "undefined; mode?: \"range\""
+            },
+            {
+              "value": "single",
+              "type": "string"
+            },
+            {
+              "value": "multiple",
+              "type": "string"
+            },
+            {
+              "value": "time",
+              "type": "string"
+            },
+            {
+              "type": "undefined; monthSelectorType?: \"static\""
+            },
+            {
+              "value": "dropdown",
+              "type": "string"
+            },
+            {
+              "type": "undefined; nextArrow?: string"
+            },
+            {
+              "type": "undefined; noCalendar?: boolean"
+            },
+            {
+              "type": "undefined; now?: DateOption"
+            },
+            {
+              "type": "undefined; onChange?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onClose?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onDayCreate?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onDestroy?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onKeyDown?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onMonthChange?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onOpen?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onParseConfig?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onReady?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onValueUpdate?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onYearChange?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; onPreCalendarPosition?: Hook"
+            },
+            {
+              "type": "Hook[]"
+            },
+            {
+              "type": "undefined; parseDate?: ((date: string, format: string) => Date)"
+            },
+            {
+              "type": "undefined; plugins?: Plugin<{}>[]"
+            },
+            {
+              "type": "undefined; position?: \"auto\""
+            },
+            {
+              "value": "above",
+              "type": "string"
+            },
+            {
+              "value": "below",
+              "type": "string"
+            },
+            {
+              "value": "auto left",
+              "type": "string"
+            },
+            {
+              "value": "auto center",
+              "type": "string"
+            },
+            {
+              "value": "auto right",
+              "type": "string"
+            },
+            {
+              "value": "above left",
+              "type": "string"
+            },
+            {
+              "value": "above center",
+              "type": "string"
+            },
+            {
+              "value": "above right",
+              "type": "string"
+            },
+            {
+              "value": "below left",
+              "type": "string"
+            },
+            {
+              "value": "below center",
+              "type": "string"
+            },
+            {
+              "value": "below right",
+              "type": "string"
+            },
+            {
+              "type": "((self: Instance, customElement: HTMLElement"
+            },
+            {
+              "type": "undefined) => void)"
+            },
+            {
+              "type": "undefined; positionElement?: Element"
+            },
+            {
+              "type": "undefined; prevArrow?: string"
+            },
+            {
+              "type": "undefined; shorthandCurrentMonth?: boolean"
+            },
+            {
+              "type": "undefined; static?: boolean"
+            },
+            {
+              "type": "undefined; showMonths?: number"
+            },
+            {
+              "type": "undefined; time_24hr?: boolean"
+            },
+            {
+              "type": "undefined; weekNumbers?: boolean"
+            },
+            {
+              "type": "undefined; wrap?: boolean"
+            },
+            {
+              "type": "undefined; }"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-open",
+          "reflectToAttr": false,
+          "docs": "Whether the modal is open or not",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to appear at the top of the modal",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "range",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "range",
+          "reflectToAttr": false,
+          "docs": "If the flatpickr config is ranged or not",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "secondDateLabel",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "second-date-label",
+          "reflectToAttr": false,
+          "docs": "Label for second date",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "startingDate",
+          "type": "Date",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Month that flatpickr calendar starts at\nTODO: base this off min date or create a buffer + scroll to current month",
+          "docsTags": [],
+          "default": "new Date()",
+          "values": [
+            {
+              "type": "Date"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "closeDateModal",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits `closeDateModal` event that `orion-date-input` can listen for",
+          "docsTags": []
+        },
+        {
+          "event": "selectModalDates",
+          "detail": "{ dates: Date[]; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits `selectModalDates` event that `orion-date-input` can listen for",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "orion-date-input"
+      ],
+      "dependencies": [
+        "orion-button"
+      ],
+      "dependencyGraph": {
+        "orion-date-calendar-modal": [
+          "orion-button"
+        ],
+        "orion-date-input": [
+          "orion-date-calendar-modal"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/orion-date-input/orion-date-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-date-input",
+      "readme": "# orion-date-input\n\nDate inputs allow the user to enter a single date or a range between two dates.. Additional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Date inputs allow the user to enter a single date or a range between two dates.. Additional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "orion-date-input-first-label - slot for first input's label"
+        },
+        {
+          "name": "slot",
+          "text": "orion-date-input-second-label - slot for second input's label"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dateFormat",
+          "type": "string",
+          "mutable": false,
+          "attr": "date-format",
+          "reflectToAttr": false,
+          "docs": "Format to be used by the date inputs & calendar\nFollows spec at https://flatpickr.js.org/formatting/",
+          "docsTags": [],
+          "default": "'m/d/Y'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disabled state of input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Error state of input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Shows the first-label inline with the input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxDate",
+          "type": "Date | string | undefined",
+          "mutable": true,
+          "attr": "max-date",
+          "reflectToAttr": true,
+          "docs": "Inclusive maximum date (time is removed from limit)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "Date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minDate",
+          "type": "Date | string | undefined",
+          "mutable": true,
+          "attr": "min-date",
+          "reflectToAttr": true,
+          "docs": "Inclusive minimum date (time is removed from limit)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "Date"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "multiMonth",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multi-month",
+          "reflectToAttr": false,
+          "docs": "Makes the calendar show two months",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder for the date inputs",
+          "docsTags": [],
+          "default": "'mm/dd/yyyy'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "range",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "range",
+          "reflectToAttr": false,
+          "docs": "Shows two inputs, and calendar is in range mode",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "orionDateSelected",
+          "detail": "{ startDate?: Date | undefined; endDate?: Date | undefined; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits 'orionDateSelected' event when a date is selected",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "closeDateModal",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "selectModalDates",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [
+        {
+          "name": "--orion-date-input-focus-box-shadow",
+          "annotation": "prop",
+          "docs": "Box shadow of the date input when focused. Defaults to 0 0 0 4px rgba(241, 241, 240, 0.25)."
+        },
+        {
+          "name": "--orion-date-input-hover",
+          "annotation": "prop",
+          "docs": "Background color of the date input when hovered. Defaults to #eaeaf3."
+        },
+        {
+          "name": "--orion-date-input-max-width",
+          "annotation": "prop",
+          "docs": "Maximum width of the date input. Defaults to 398px."
+        },
+        {
+          "name": "--orion-date-input-min-width",
+          "annotation": "prop",
+          "docs": "Minimum width of the date input. Defaults to 140px."
+        }
+      ],
+      "slots": [
+        {
+          "name": "orion-date-input-first-label",
+          "docs": "slot for first input's label"
+        },
+        {
+          "name": "orion-date-input-second-label",
+          "docs": "slot for second input's label"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "orion-date-calendar-modal"
+      ],
+      "dependencyGraph": {
+        "orion-date-input": [
+          "orion-date-calendar-modal"
+        ],
+        "orion-date-calendar-modal": [
+          "orion-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/orion-drawer/orion-drawer.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-drawer",
+      "readme": "# orion-drawer\n\nDrawer is a component that allows users to display content in a temporary sidebar.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Drawer is a component that allows users to display content in a temporary sidebar.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "orion-drawer-title - slot for title"
+        },
+        {
+          "name": "slot",
+          "text": "orion-drawer-body - slot for body content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-drawer-footer-content - slot for footer content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-drawer-secondary-button - slot for secondary button"
+        },
+        {
+          "name": "slot",
+          "text": "orion-drawer-primary-button - slot for primary button"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-open",
+          "reflectToAttr": true,
+          "docs": "Prop used to show/hide drawer",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "openFrom",
+          "type": "\"bottom\" | \"left\" | \"right\"",
+          "mutable": false,
+          "attr": "open-from",
+          "reflectToAttr": false,
+          "docs": "Animates drawer in from left, right, or bottom",
+          "docsTags": [],
+          "default": "'right'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "orionDrawerFooterBtnClicked",
+          "detail": "{ variant: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits event when footer buttons are clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-drawer-max-width-lg",
+          "annotation": "prop",
+          "docs": "max width of drawer on large screens (1441px and above). Default is 33%"
+        },
+        {
+          "name": "--orion-drawer-max-width-md",
+          "annotation": "prop",
+          "docs": "max width of drawer on medium screens (1025px - 1440px). Default is 40%"
+        },
+        {
+          "name": "--orion-drawer-max-width-sm",
+          "annotation": "prop",
+          "docs": "max width of drawer on small screens (769px - 1024px). Default is 50%"
+        },
+        {
+          "name": "--orion-drawer-top-value",
+          "annotation": "prop",
+          "docs": "top starting position of drawer"
+        }
+      ],
+      "slots": [
+        {
+          "name": "orion-drawer-body",
+          "docs": "slot for body content"
+        },
+        {
+          "name": "orion-drawer-footer-content",
+          "docs": "slot for footer content"
+        },
+        {
+          "name": "orion-drawer-primary-button",
+          "docs": "slot for primary button"
+        },
+        {
+          "name": "orion-drawer-secondary-button",
+          "docs": "slot for secondary button"
+        },
+        {
+          "name": "orion-drawer-title",
+          "docs": "slot for title"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "orion-button"
+      ],
+      "dependencyGraph": {
+        "orion-drawer": [
+          "orion-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/orion-dropdown/orion-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-dropdown",
+      "readme": "# orion-dropdown\n\nDropdown is a component that allows users to select one option from a set.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Dropdown is a component that allows users to select one option from a set.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disabled state of dropdown",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Error state of dropdown",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-open",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "form name of dropdown",
+          "docsTags": [],
+          "default": "'dropdown'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "summary",
+          "type": "string",
+          "mutable": true,
+          "attr": "summary",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "value of currently selected option",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits event that users can listen to",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "dropdownOptionChanged",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "mousedown",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "mouseup",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-dropdown-option/orion-dropdown-option.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-dropdown-option",
+      "readme": "# orion-dropdown-option\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the dropdown option label"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "The checked state of the dropdown option",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "focusable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "focusable",
+          "reflectToAttr": true,
+          "docs": "Focuses the dropdown option",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": true,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The label for the input element passed in as a slot",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The input name",
+          "docsTags": [],
+          "default": "'dropdown-option'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "dropdownOptionChanged",
+          "detail": "{ value: string; label: string; checked: boolean; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emit `dropdownOptionChanged` event that `orion-dropdown` can listen for",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the dropdown option label"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-error/orion-error.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-error",
+      "readme": "# orion-error\n\nError is a component that displays an error message. It is used to display errors in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Error is a component that displays an error message. It is used to display errors in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for error message content"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for error message content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-label/orion-label.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-label",
+      "readme": "# orion-label\n\nLabel is a component that displays a label for a form element. It is used to display labels in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Label is a component that displays a label for a form element. It is used to display labels in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for label content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-label-conditional - slot for conditional text"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Shows the disabled state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Shows the error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-label--padding-right",
+          "annotation": "prop",
+          "docs": "Padding right of the label. Default: 8px"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for label content"
+        },
+        {
+          "name": "orion-label-conditional",
+          "docs": "slot for conditional text"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-link/orion-link.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-link",
+      "readme": "# orion-link\n\nLink is an accessible element used for navigation. It is also known as `Anchor`, `<a>`, `Text Link` or `Hyperlink`. Using an `<a>` tag is an acceptable way to render a text link, but this component is also available with additional options. This component is styled to resemble a hyperlink and semantically renders an `<a>`. Links are visually similar to tertiary buttons, but are semantically different, which matters for accessibility. Use a link when you want to navigate the user to a different location. Use a button when you want to cause a change in either back-end or the front-end of the website. (A \"Log in\" link will navigate the user to a form, a \"Log in\" button will submit the form and log the user into the application.). All links can have a subtle quiet style, without an underline. This style should only be used when the placement and context of the link is explicit enough that a visible underline is not necessary. Color alone is not enough context to meet accessibility requirements. Commonly used in footer navigation. A link can be disabled by removing the `href` or adding the `disabled` prop. Additional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Link is an accessible element used for navigation. It is also known as `Anchor`, `<a>`, `Text Link` or `Hyperlink`. Using an `<a>` tag is an acceptable way to render a text link, but this component is also available with additional options. This component is styled to resemble a hyperlink and semantically renders an `<a>`. Links are visually similar to tertiary buttons, but are semantically different, which matters for accessibility. Use a link when you want to navigate the user to a different location. Use a button when you want to cause a change in either back-end or the front-end of the website. (A \"Log in\" link will navigate the user to a form, a \"Log in\" button will submit the form and log the user into the application.). All links can have a subtle quiet style, without an underline. This style should only be used when the placement and context of the link is explicit enough that a visible underline is not necessary. Color alone is not enough context to meet accessibility requirements. Commonly used in footer navigation. A link can be disabled by removing the `href` or adding the `disabled` prop. Additional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "The link disabled state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "download",
+          "type": "string",
+          "mutable": false,
+          "attr": "download",
+          "reflectToAttr": false,
+          "docs": "The link download",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "The link href",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-left",
+          "reflectToAttr": false,
+          "docs": "The icon position",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "The icon name",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "noUnderline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "no-underline",
+          "reflectToAttr": false,
+          "docs": "No underline",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "mutable": false,
+          "attr": "rel",
+          "reflectToAttr": false,
+          "docs": "The link rel",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | \"framename\"",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "The link target",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "value": "_blank",
+              "type": "string"
+            },
+            {
+              "value": "_parent",
+              "type": "string"
+            },
+            {
+              "value": "_self",
+              "type": "string"
+            },
+            {
+              "value": "_top",
+              "type": "string"
+            },
+            {
+              "value": "framename",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-link-color",
+          "annotation": "prop",
+          "docs": "value of the color property"
+        },
+        {
+          "name": "--orion-link-color--active",
+          "annotation": "prop",
+          "docs": "value of the color property on active"
+        },
+        {
+          "name": "--orion-link-color--hover",
+          "annotation": "prop",
+          "docs": "value of the color property on hover"
+        },
+        {
+          "name": "--orion-link-font-size",
+          "annotation": "prop",
+          "docs": "value of the font-size property"
+        },
+        {
+          "name": "--orion-link-font-style",
+          "annotation": "prop",
+          "docs": "value of the font-style property"
+        },
+        {
+          "name": "--orion-link-font-weight",
+          "annotation": "prop",
+          "docs": "value of the font-weight property"
+        },
+        {
+          "name": "--orion-link-icon-left",
+          "annotation": "prop",
+          "docs": "value of the left property of the icon"
+        },
+        {
+          "name": "--orion-link-icon-top",
+          "annotation": "prop",
+          "docs": "value of the top property of the icon"
+        },
+        {
+          "name": "--orion-link-line-height",
+          "annotation": "prop",
+          "docs": "value of the line-height property"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-list/orion-list.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-list",
+      "readme": "# orion-list\n\nList is a container for list items. It is also known as `ul` or `Unordered List`. This component is styled to resemble a list and semantically renders an `<ul>`. Use in conjunction with `orion-list-item` component. Additional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "List is a container for list items. It is also known as `ul` or `Unordered List`. This component is styled to resemble a list and semantically renders an `<ul>`. Use in conjunction with `orion-list-item` component. Additional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-list-item/orion-list-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-list-item",
+      "readme": "# orion-list-item\n\nList item is a container for list items. It is also known as `li` or `List Item`. This component is styled to resemble a list item and semantically renders an `<li>`. Use in conjunction with `orion-list` component. Additional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "List item is a container for list items. It is also known as `li` or `List Item`. This component is styled to resemble a list item and semantically renders an `<li>`. Use in conjunction with `orion-list` component. Additional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "orion-list-item-image - Slot for list item image"
+        },
+        {
+          "name": "slot",
+          "text": "orion-list-item-heading - Slot for list item heading"
+        },
+        {
+          "name": "slot",
+          "text": "orion-list-item-subheading - Slot for list item subheading"
+        },
+        {
+          "name": "slot",
+          "text": "orion-list-item-body - Slot for list item body"
+        },
+        {
+          "name": "slot",
+          "text": "- Unnamed default slot for list item content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables the list item",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": false,
+          "docs": "Adds an icon to the list item",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasMarker",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-marker",
+          "reflectToAttr": false,
+          "docs": "Adds a marker to the list item",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasTrailingIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-trailing-icon",
+          "reflectToAttr": false,
+          "docs": "Adds a trailing icon to the list item. The href property will add a trailing icon automatically",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "Adds a link to the list item. Trailing icon will be added automatically",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "Name of the icon to be added to the list item",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "trailingIconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "trailing-icon-name",
+          "reflectToAttr": false,
+          "docs": "Name of the trailing icon to be added to the list item. Deaults to chevron_right",
+          "docsTags": [],
+          "default": "'chevron_right'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-list-item--vertical-align",
+          "annotation": "prop",
+          "docs": "Alignment of list item content. Default is center. Can be set to flex-start or flex-end."
+        },
+        {
+          "name": "--orion-list-item-icon-color",
+          "annotation": "prop",
+          "docs": "value of the color property. Default is #024"
+        },
+        {
+          "name": "--orion-list-item-marker-color",
+          "annotation": "prop",
+          "docs": "value of the background-color property of the marker. Default is #024"
+        },
+        {
+          "name": "--orion-list-item-marker-size",
+          "annotation": "prop",
+          "docs": "value of the width and height properties. Default is 16px"
+        },
+        {
+          "name": "--orion-list-item-trailing-icon-color",
+          "annotation": "prop",
+          "docs": "value of the background-color property of the trailing icon. Default is #024"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Unnamed default slot for list item content"
+        },
+        {
+          "name": "orion-list-item-body",
+          "docs": "Slot for list item body"
+        },
+        {
+          "name": "orion-list-item-heading",
+          "docs": "Slot for list item heading"
+        },
+        {
+          "name": "orion-list-item-image",
+          "docs": "Slot for list item image"
+        },
+        {
+          "name": "orion-list-item-subheading",
+          "docs": "Slot for list item subheading"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-message/orion-message.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-message",
+      "readme": "# orion-message\n\nMessages are used to communicate important information to the user. They can be used to indicate information, success, warning, or error. Messages can be dismissed by the user or automatically.\n\nFor dismissible/temporary alert messages, use `z-index: var(--orion-z-extreme, 9999);` to ensure the message is always on top of other elements. The highest component in the library is `orion-modal` which uses `z-index: var(--orion-z-very-high, 5000);` and temporary alert messages should always be on top of modals.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Messages are used to communicate important information to the user. They can be used to indicate information, success, warning, or error. Messages can be dismissed by the user or automatically.\n\nFor dismissible/temporary alert messages, use `z-index: var(--orion-z-extreme, 9999);` to ensure the message is always on top of other elements. The highest component in the library is `orion-modal` which uses `z-index: var(--orion-z-very-high, 5000);` and temporary alert messages should always be on top of modals.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for message content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "dismissible",
+          "reflectToAttr": true,
+          "docs": "Toggles the ability to dismiss the message via a close button in the top right of the message",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": false,
+          "docs": "Toggles the display of the icon in the top left of the message",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "Optional heading text for the message that appears above message body message",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-open",
+          "reflectToAttr": true,
+          "docs": "Prop used to show/hide message",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "overlayTime",
+          "type": "number",
+          "mutable": false,
+          "attr": "overlay-time",
+          "reflectToAttr": false,
+          "docs": "Optional time for the mobile overlay to display in milliseconds. Default is 3000.",
+          "docsTags": [],
+          "default": "3000",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "\"high\" | \"info\" | \"low\" | \"medium\" | \"success\" | \"success-overlay\"",
+          "mutable": true,
+          "attr": "variant",
+          "reflectToAttr": true,
+          "docs": "Stylistic variations for the message type.\n- **success** - results in a green message\n- **success-overlay** - results in a full screen overlay on mobile\n- **high** - results in a red message\n- **medium** - results in an orange message\n- **low** - results in a yellow message\n- **info** - results in a blue message",
+          "docsTags": [],
+          "default": "'info'",
+          "values": [
+            {
+              "value": "high",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "low",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "success-overlay",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for message content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-modal/orion-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-modal",
+      "readme": "# orion-modal\n\nModal is a component that displays a modal dialog. It is used to display content that requires user interaction.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Modal is a component that displays a modal dialog. It is used to display content that requires user interaction.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "orion-modal-title - slot for title"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-body - slot for body content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-footer-left - slot for left aligned footer content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-footer-center - slot for center aligned footer content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-footer-right - slot for right aligned footer content"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-primary-button - slot for primary button"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-secondary-button - slot for secondary button"
+        },
+        {
+          "name": "slot",
+          "text": "orion-modal-button-row - slot for content in the button row. Displays to the left of the primary and secondary buttons in desktop and to the bottom in mobile. This slot only exists if the primary and/or secondary buttons are also present."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "hasCancelIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-cancel-icon",
+          "reflectToAttr": false,
+          "docs": "Toggles visibility of the close icon in the top right of the modal",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hasIcon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-icon",
+          "reflectToAttr": false,
+          "docs": "Adds an icon to the modal header",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "Name of the icon to be added to the modal header",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isFullscreen",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-fullscreen",
+          "reflectToAttr": false,
+          "docs": "Set this to have the modal take up the full screen",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isFullscreenMobile",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-fullscreen-mobile",
+          "reflectToAttr": false,
+          "docs": "Set this to have the modal take up the full screen on mobile only",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-open",
+          "reflectToAttr": false,
+          "docs": "Toggles the visibility of the modal",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isTitleCentered",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-title-centered",
+          "reflectToAttr": false,
+          "docs": "Set this to center-align the modal title",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "primaryButtonDisabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "primary-button-disabled",
+          "reflectToAttr": false,
+          "docs": "Disables the primary button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "secondaryButtonDisabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "secondary-button-disabled",
+          "reflectToAttr": false,
+          "docs": "Disables the secondary button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "orionModalFooterBtnClicked",
+          "detail": "{ variant: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits event when footer buttons are clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keyup",
+          "target": "document",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [
+        {
+          "name": "--orion-modal-height-desktop",
+          "annotation": "prop",
+          "docs": "value of the height property. Default value is auto. Value can be in px, percentage or vh."
+        },
+        {
+          "name": "--orion-modal-height-mobile",
+          "annotation": "prop",
+          "docs": "value of the height property. Default value is auto. Value can be in px, percentage or vh."
+        },
+        {
+          "name": "--orion-modal-max-height-desktop",
+          "annotation": "prop",
+          "docs": "value of the max-height property. Default value is 50vh. Value can be in px, percentage or vh."
+        },
+        {
+          "name": "--orion-modal-max-height-mobile",
+          "annotation": "prop",
+          "docs": "value of the max-height property. Default value is 480px. Value can be in px, percentage or vh. Recommend do not exceed 667px (iPhone SE height)."
+        }
+      ],
+      "slots": [
+        {
+          "name": "orion-modal-body",
+          "docs": "slot for body content"
+        },
+        {
+          "name": "orion-modal-button-row",
+          "docs": "slot for content in the button row. Displays to the left of the primary and secondary buttons in desktop and to the bottom in mobile. This slot only exists if the primary and/or secondary buttons are also present."
+        },
+        {
+          "name": "orion-modal-footer-center",
+          "docs": "slot for center aligned footer content"
+        },
+        {
+          "name": "orion-modal-footer-left",
+          "docs": "slot for left aligned footer content"
+        },
+        {
+          "name": "orion-modal-footer-right",
+          "docs": "slot for right aligned footer content"
+        },
+        {
+          "name": "orion-modal-primary-button",
+          "docs": "slot for primary button"
+        },
+        {
+          "name": "orion-modal-secondary-button",
+          "docs": "slot for secondary button"
+        },
+        {
+          "name": "orion-modal-title",
+          "docs": "slot for title"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "orion-button"
+      ],
+      "dependencyGraph": {
+        "orion-modal": [
+          "orion-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/orion-note/orion-note.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-note",
+      "readme": "# orion-note\n\nNote is a component that displays a note message. It is used to display notes in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Note is a component that displays a note message. It is used to display notes in forms. Use in conjunction with the `orion-text-input` component and other form components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for note content"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for note content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-popover/orion-popover.tsx",
+      "encapsulation": "none",
+      "tag": "orion-popover",
+      "readme": "# orion-popover\n\nPopovers are non-modal dialogs that allow users to access additional related information or functionality without a change in context. Popovers can appear with title areas or not. Popover content is specific to the intended use and, thus, not specified in the symbology. Note that any element can be used to launch a popover, not just a link or icon.\n\nThis component uses [PopperJS](https://popper.js.org/) to handle most of the functionality.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Popovers are non-modal dialogs that allow users to access additional related information or functionality without a change in context. Popovers can appear with title areas or not. Popover content is specific to the intended use and, thus, not specified in the symbology. Note that any element can be used to launch a popover, not just a link or icon.\n\nThis component uses [PopperJS](https://popper.js.org/) to handle most of the functionality.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the popover trigger"
+        },
+        {
+          "name": "slot",
+          "text": "orion-popover-title - slot for popover title"
+        },
+        {
+          "name": "slot",
+          "text": "orion-popover-body - slot for body content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "placement",
+          "type": "\"bottom\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"left-end\" | \"left-start\" | \"right\" | \"right-end\" | \"right-start\" | \"top\" | \"top-end\" | \"top-start\"",
+          "mutable": true,
+          "attr": "placement",
+          "reflectToAttr": true,
+          "docs": "The placement of the popper relative to its trigger",
+          "docsTags": [],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "bottom-end",
+              "type": "string"
+            },
+            {
+              "value": "bottom-start",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "left-end",
+              "type": "string"
+            },
+            {
+              "value": "left-start",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "right-end",
+              "type": "string"
+            },
+            {
+              "value": "right-start",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            },
+            {
+              "value": "top-end",
+              "type": "string"
+            },
+            {
+              "value": "top-start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "popperWidth",
+          "type": "number",
+          "mutable": true,
+          "attr": "popper-width",
+          "reflectToAttr": true,
+          "docs": "width should be between 100px and 640px",
+          "docsTags": [],
+          "default": "300",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the popover trigger"
+        },
+        {
+          "name": "orion-popover-body",
+          "docs": "slot for body content"
+        },
+        {
+          "name": "orion-popover-title",
+          "docs": "slot for popover title"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-progress-meter/orion-progress-meter.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-progress-meter",
+      "readme": "# orion-progress-meter\n\nProgress-meter is a combination of the native HTML `<progress>` and `<meter>` elements.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Progress-meter is a combination of the native HTML `<progress>` and `<meter>` elements.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "isCircle",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-circle",
+          "reflectToAttr": false,
+          "docs": "Shows progress meter in circle format",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "The maximum possible value",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "percentOfTarget",
+          "type": "number",
+          "mutable": false,
+          "attr": "percent-of-target",
+          "reflectToAttr": false,
+          "docs": "The percent of target value where progress meter color will change from error to warn (decimal value between 0 and 1)",
+          "docsTags": [],
+          "default": "0.8",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "segments",
+          "type": "number",
+          "mutable": false,
+          "attr": "segments",
+          "reflectToAttr": false,
+          "docs": "Amount of segments to divide progress meter into",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showValue",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-value",
+          "reflectToAttr": false,
+          "docs": "Display value in center of circle",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "The circle size",
+          "docsTags": [],
+          "default": "'small'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "number",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "The target value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "The current value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-progress-meter__color-circle-label",
+          "annotation": "prop",
+          "docs": "Color of center circle background"
+        },
+        {
+          "name": "--orion-progress-meter__color-error",
+          "annotation": "prop",
+          "docs": "Color of progress meter when value is less than percent of target (default 80%)"
+        },
+        {
+          "name": "--orion-progress-meter__color-progess-background",
+          "annotation": "prop",
+          "docs": "Color of progress meter background"
+        },
+        {
+          "name": "--orion-progress-meter__color-progress",
+          "annotation": "prop",
+          "docs": "Color of progress meter"
+        },
+        {
+          "name": "--orion-progress-meter__color-success",
+          "annotation": "prop",
+          "docs": "Color of progress meter when value equals target"
+        },
+        {
+          "name": "--orion-progress-meter__color-warn",
+          "annotation": "prop",
+          "docs": "Color of progress meter when value is less than target, but greater than or equal to the percent of target (default 80%)"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-radio-button/orion-radio-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-radio-button",
+      "readme": "# orion-radio-button\n\nRadio button is a component that displays a radio button. It is used to select a single option from a set of options. Use in conjunction with the `orion-radio-group` component.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Radio button is a component that displays a radio button. It is used to select a single option from a set of options. Use in conjunction with the `orion-radio-group` component.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the radio button label"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "The checked state of the radio button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "focusable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "focusable",
+          "reflectToAttr": true,
+          "docs": "Focuses the radio button. This method is used internally by the `orion-radio-button-group` component. Do not use it directly. Use the `orion-radio-button-group` component instead.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The input name",
+          "docsTags": [],
+          "default": "'radio'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "radioButtonChanged",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emit `radioButtonChanged` event that `orion-radio-button-group` can listen for",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-radio--vertical-align",
+          "annotation": "prop",
+          "docs": "Alignment of radio label. Default is flex-start. Can be set to center or flex-end."
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the radio button label"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-radio-button-group/orion-radio-button-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-radio-button-group",
+      "readme": "# orion-radio-button-group\n\nRadio button group is a component that controls layout of a group of radio buttons and allows for a single selection. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Radio button group is a component that controls layout of a group of radio buttons and allows for a single selection. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disabled radio group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "The inline display of the radio group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "form name of radio buttons",
+          "docsTags": [],
+          "default": "'radiogroup'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "value of currently checked radio button",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits event that users can listen to",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "radioButtonChanged",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-stepper/orion-stepper.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-stepper",
+      "readme": "# orion-stepper\n\nStepper is a component that displays a number stepper.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Stepper is a component that displays a number stepper.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Shows error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hideTally",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "hide-tally",
+          "reflectToAttr": false,
+          "docs": "Hide the current tally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Max value that the stepper can be incremented to",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Min value that the stepper can be decremented to",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "Step size to increment/decrement",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "The current value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: number; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "CustomEvent `detail` will be the new value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [
+        {
+          "name": "--orion-stepper-tally-width",
+          "annotation": "prop",
+          "docs": "value of the tally width (default: 60px for mobile, 44px for desktop)"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-tab/orion-tab.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-tab",
+      "readme": "# orion-tab\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-tab-panel/orion-tab-panel.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-tab-panel",
+      "readme": "# orion-tab-panel\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "for",
+          "type": "string",
+          "mutable": false,
+          "attr": "for",
+          "reflectToAttr": false,
+          "docs": "Specifies which orion-tabs element this panel is bound to. Set by a parent orion-tabs component.",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "isActive",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "is-active",
+          "reflectToAttr": true,
+          "docs": "Marks the panel as active or not",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "panelIndex",
+          "type": "number",
+          "mutable": false,
+          "attr": "panel-index",
+          "reflectToAttr": false,
+          "docs": "Index of tab that controls if this panel is active. Set by a parent orion-tabs component.",
+          "docsTags": [],
+          "default": "-1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "orionTabSelected",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-tabs/orion-tabs.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-tabs",
+      "readme": "# orion-tabs\n\nTabs is a component that will display tabs that can be selected. It will automatically hide overflow, but provides click+drag scrolling alongside buttons that will scroll.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Tabs is a component that will display tabs that can be selected. It will automatically hide overflow, but provides click+drag scrolling alongside buttons that will scroll.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the tab labels"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "activeTab",
+          "type": "number",
+          "mutable": true,
+          "attr": "active-tab",
+          "reflectToAttr": true,
+          "docs": "Default and current active tab index",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minTabWidth",
+          "type": "string",
+          "mutable": false,
+          "attr": "min-tab-width",
+          "reflectToAttr": true,
+          "docs": "The minimum width for tabs",
+          "docsTags": [],
+          "default": "'104px'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "scrollToStartingActiveTab",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "scroll-to-starting-active-tab",
+          "reflectToAttr": false,
+          "docs": "Component will scroll to the starting active tab",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "orionTabSelected",
+          "detail": "{ tabIndex: number; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits event when a tab header is clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the tab labels"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-text-input/orion-text-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-text-input",
+      "readme": "# orion-text-input\n\nText input is a component that allows users to enter text. It is used to display text inputs in forms. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Text input is a component that allows users to enter text. It is used to display text inputs in forms. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autocomplete",
+          "type": "string",
+          "mutable": false,
+          "attr": "autocomplete",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dirname",
+          "type": "string",
+          "mutable": false,
+          "attr": "dirname",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Shows error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "form",
+          "type": "string",
+          "mutable": false,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "list",
+          "type": "string",
+          "mutable": false,
+          "attr": "list",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "524288",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "The input placeholder",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `input` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"email\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The input type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "number",
+              "type": "string"
+            },
+            {
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "CustomEvent `detail` will be the new value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-textarea/orion-textarea.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-textarea",
+      "readme": "# orion-textarea\n\nTextarea is a component that displays a textarea. It is used to display textareas in forms. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Textarea is a component that displays a textarea. It is used to display textareas in forms. Use in conjunction with `orion-label`, `orion-error` and `orion-note` components.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autocorrect",
+          "type": "string",
+          "mutable": false,
+          "attr": "autocorrect",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "'off'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "cols",
+          "type": "number",
+          "mutable": false,
+          "attr": "cols",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "20",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "error",
+          "reflectToAttr": false,
+          "docs": "Shows error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "form",
+          "type": "string",
+          "mutable": false,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "max-length",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "524288",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minLength",
+          "type": "number",
+          "mutable": false,
+          "attr": "min-length",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "The input placeholder",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resize",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resize",
+          "reflectToAttr": false,
+          "docs": "Shows the resize option",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizeHorizontal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resize-horizontal",
+          "reflectToAttr": false,
+          "docs": "Shows the resize horizonal-only option",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizeVertical",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resize-vertical",
+          "reflectToAttr": false,
+          "docs": "Shows the resize vertical-only option",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "2",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "spellcheck",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "spellcheck",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "wrap",
+          "type": "string",
+          "mutable": false,
+          "attr": "wrap",
+          "reflectToAttr": false,
+          "docs": "* Same as for [HTML `textarea` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)",
+          "docsTags": [],
+          "default": "'soft'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "CustomEvent `detail` will be the new value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-toggle/orion-toggle.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-toggle",
+      "readme": "# orion-toggle\n\nToggle is a component that allows users to toggle between two states. It is used to switch between on and off states. Use in conjunction with the `orion-toggle-group` component to control layout of a group of toggles.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Toggle is a component that allows users to toggle between two states. It is used to switch between on and off states. Use in conjunction with the `orion-toggle-group` component to control layout of a group of toggles.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the toggle label"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "The checked state of the toggle",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disables interactions",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "justify",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify",
+          "reflectToAttr": false,
+          "docs": "Justify the content of the toggle and label",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The input name",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Required attribute",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The input value",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "{ value: string; checked: boolean; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "CustomEvent `detail` will be the new value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--orion-toggle--vertical-align",
+          "annotation": "prop",
+          "docs": "Alignment of toggle label. Default is flex-start. Can be set to center or flex-end."
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the toggle label"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-toggle-group/orion-toggle-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "orion-toggle-group",
+      "readme": "# orion-toggle-group\n\nToggle group is a component that controls layout of a group of toggles.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Toggle group is a component that controls layout of a group of toggles.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disable all toggles in group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "The inline state of the toggle group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "justify",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify",
+          "reflectToAttr": false,
+          "docs": "Justify the content of the toggle group",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/orion-tooltip/orion-tooltip.tsx",
+      "encapsulation": "none",
+      "tag": "orion-tooltip",
+      "readme": "# orion-tooltip\n\nTooltip is a component that displays a tooltip message. It is used to display additional information about an element.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)\n",
+      "docs": "Tooltip is a component that displays a tooltip message. It is used to display additional information about an element.\n\nAdditional documentation available at [orion.united.com](https://orion.united.com/)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "default - default slot for the tooltip trigger"
+        },
+        {
+          "name": "slot",
+          "text": "orion-tooltip-body - slot for body content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "tooltipPosition",
+          "type": "\"bottom\" | \"top\"",
+          "mutable": true,
+          "attr": "tooltip-position",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tooltipWidth",
+          "type": "number",
+          "mutable": false,
+          "attr": "tooltip-width",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "200",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "default slot for the tooltip trigger"
+        },
+        {
+          "name": "orion-tooltip-body",
+          "docs": "slot for body content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

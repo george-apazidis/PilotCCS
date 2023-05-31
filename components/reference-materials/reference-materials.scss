@@ -1,0 +1,251 @@
+@import url(/components/list-group/list-group.css);
+
+.references {
+    --list-item-padding: 0px;
+    background-color: #fafafa;
+
+    // add negative margin to remove margin added by main-content
+    margin: calc((var(--orion-space-xl, 16px))*-1);
+
+    @media screen and (min-width: 1025px) { 
+        margin: 0;
+        width: 100%;
+    }
+
+    .back-link {
+        display: inline-flex;
+        margin-top: 18px;
+        margin-left: 16px;
+        margin-bottom: 16px;
+
+        @media screen and (min-width: 1025px) {
+            margin-top: 0;
+            margin-left: 0;
+        }
+    }
+
+    .list-group {
+        padding: 0;
+        margin-top: 60px;
+        margin-bottom: 16px;
+
+        @media screen and (min-width: 769px) {
+            margin-top: 0;
+        }
+
+        @media screen and (min-width: 1025px) { 
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            font-size: 16px;
+            line-height: 24px;
+            // padding: 11px 16px;
+            padding: 0;
+            background-color: var(--orion-white, #fff);
+            border-bottom: 1px solid transparent;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0px;
+
+            @media screen and (min-width: 1025px) { 
+                flex-basis: 33.333%;
+                border: none;
+                border: 1px solid #cfcfcf;
+                border-top: 1px solid transparent;
+
+                // remove border-right starting from 2nd item and every 3rd item after
+                &:nth-child(3n+2) {
+                    border-left: none;
+                    border-right: none;
+                }
+
+                // select first 3 items
+                &:nth-child(-n+3) {
+                    border-top: 1px solid #cfcfcf;
+                }
+            }
+
+            &:first-child {
+                border-top: 1px solid #cfcfcf;
+            }
+
+            &:last-child {
+                border-bottom: 1px solid #cfcfcf;
+                @media screen and (min-width: 1025px) {
+                    border-right: 1px solid #cfcfcf;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                padding: 11px 16px;
+                width: 100%;
+
+                &:has(> .orion-icon) {
+                    display: flex;
+                    align-items: center;
+
+                    .orion-icon {
+                        font-size: 24px;
+                        margin-top: 2px;
+                        margin-right: 8px;
+                    }
+                }
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                small {
+                    font-size: 13px;
+                    color: var(--orion-gray-80, #333);
+                    font-weight: 400;
+                }
+            }
+
+            h2 {
+                padding: 0;
+            }
+
+            &--video {
+                padding: 16px;
+            }
+
+        }
+
+        &--column {
+            flex-direction: column;
+
+            .list-group__item {
+                @media screen and (min-width: 1025px) { 
+                    border-right: 1px solid #cfcfcf;
+                    border-left: 1px solid #cfcfcf;
+                    border-top: 1px solid transparent;
+
+                    &:first-child {
+                        border-top: 1px solid #cfcfcf;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    &__accordion {
+
+        &-collapse {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            padding: 18px 10px;
+            @media screen and (min-width: 1025px) { 
+                padding: 0;
+                margin-bottom: 28px;
+            }
+    
+        }
+
+        &-header {
+            font-family: var(--orion-font-family, "Open Sans", Arial, Helvetica, sans-serif);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 40px;
+            background-color: #fafafa;
+            color: var(--orion-gray-80, #333);
+            cursor: pointer;
+            padding: 10px 16px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            line-height: 24px;
+            border-bottom: 1px solid #ccc;
+
+            &.active {
+                border-bottom: 1px solid transparent;
+            }
+    
+    
+            @media screen and (min-width: 1025px) {
+                padding: 8px 13px;
+            }
+      
+    
+            &:focus-visible {
+                outline: 3px solid var(--orion-color-focus, #d8d9eb);
+            }
+    
+            .orion-icon {
+                color: var(--orion-atlantic-amethyst, #6244bb);
+                position: relative;
+                top: 2px;
+            }
+    
+            &.active {
+                .orion-icon-chevron {
+                    &_open {
+                        display: none;
+                    }
+    
+                    &_close {
+                        display: inline-block;
+                    }
+                }
+
+                + .references__accordion-panel {
+                    max-height: max-content;
+                }
+    
+            }
+            .orion-icon-chevron_close {
+                display: none;
+            }
+        }
+
+        &-heading {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 600;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &-icon {
+            font-size: 24px;
+            margin-left: 16px;
+        }
+    
+        &-panel {
+            font-size: 13px;
+            line-height: 16px;
+            padding: 0;
+            color: var(--orion-gray-80, #333);
+            max-height: 0;
+            overflow: hidden;
+
+            .list-group {
+                margin-top: 0;
+            }
+           
+    
+            // @media screen and (min-width: 1025px) {
+            //     strong {
+            //         font-size: 16px;
+            //         line-height: 24px;
+            //         font-weight: 600;
+            //     }
+            // }
+
+
+        }
+    }
+
+
+
+}

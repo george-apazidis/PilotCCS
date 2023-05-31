@@ -1,0 +1,98 @@
+@import './reset';
+
+@import './util/utility';
+
+@import './icon-font';
+
+
+main {
+    overflow: auto;
+}
+
+.main-content--wrapper {
+    width: 100%;
+    background-color: #fafafa;
+    overflow: auto;
+}
+
+.main-content {
+    padding-top: 0;
+    padding: var(--orion-space-xl, 16px);
+}
+
+.back-link {
+    display: flex;
+    gap: 8px;  
+}
+
+.back-link .orion-icon-arrow_left {
+    margin-top: 1px;
+}
+
+.back-link:link, .back-link:visited {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 769px) {
+
+    main {
+        display: inherit;
+        flex: 1;
+    }
+
+    .main-content {
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .main-content--wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-content {
+        display: flex;
+        max-width: 1072px;
+        gap: clamp(24px, 3vw, 88px);
+    }
+
+    .main-content--column {
+        flex: 1 1 0px;
+    }
+
+
+}
+
+/* Per Mike's request, I'm adding placeholder styles for dark mode where future CSS variables can be defined */
+
+:root {
+    color-scheme: light dark;
+}
+
+/* Default colors */
+body {
+    --text-color: #333;
+    --bkg-color: #fff;
+}
+
+/* Dark theme colors */
+body.dark-theme {
+--text-color: #eee;
+--bkg-color: #121212;
+}
+  
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body { 
+        --text-color: #eee;
+        --bkg-color: #121212;
+    }
+    /* Override dark mode with light mode styles if the user decides to swap */
+    body.light-theme {
+        --text-color: #333;
+        --bkg-color: #fff;
+    }
+}

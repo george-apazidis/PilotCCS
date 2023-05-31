@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#002244">
+    <meta name="color-scheme" content="light dark">
+    <title>Sprint 5 - Demo</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Trip Details styles -->
+    <link rel="stylesheet" href="/components/trip-display/trip-display.css">
+
+
+    <!-- 
+        This method required the Orion Web Components to be installed and updated locally.
+        
+        Step 1. Download the orion package (.tgz file) from the Artifact Repository Browser.
+        Step 2. Extract the package locally in the demo folder.
+
+        For version #, check:
+        \demo\package\package.json
+     -->
+     <script type="module">
+        import { defineCustomElements } from '/package/loader/index.js';
+        defineCustomElements();
+    </script>
+
+</head>
+<body>
+
+
+    <main>
+        <div id="trip-display-overlay" class="main-content--column"  >
+            <div class="trip-details-header">
+                <div class="hidden-sm">
+                    <a class="back-link js-link-trip-display-back" href="#">
+                        <i class="orion-icon orion-icon-arrow_left"></i>
+                        <span>Go back</span>
+                    </a>
+                </div>
+                <div class="trip-details-header__heading">Trip Details</div>
+        
+                <button type="button" class="js-trip-display-close trip-details-header__close-btn" aria-label="Close">
+                    <i class="orion-icon-close color-white"></i>
+                </button>
+            </div>
+        
+            <div class="trip-details">
+                <div class="trip-details__refresh-header">
+                    <small>Last refreshed: 02/28/2023 05:30:33 CT</small>
+                    <small><a class="trip-details__refresh-link" href="#"><i class="orion-icon orion-icon-refresh"></i>Refresh</a></small>
+                </div>
+        
+                <div class="trip-assignment">
+                    <button type="button" class="trip-assignment__header js-collapsible">
+                        <span class="trip-assignment__trip-number"><strong class="color-red">F1082</strong> at 10:20 &middot; <strong>27Feb - 01Mar</strong></span>
+                        <span class="trip-assignment__header-details">
+                            Block: <strong>16:23</strong><small>E</small><span class="px-10 font-weight-600">·</span>PTC: <strong>17:44</strong><span class="px-10 font-weight-600">·</span>TAFB: <strong>084:57</strong><small>E</small><span class="px-10 font-weight-600">·</span>PPU: <strong>25%</strong>
+                        </span>
+                        <span class="trip-assignment__trip-icons">
+                            <span class="icon-legality-violation js-modal-1483-legality pointer"><span class="path1"></span><span class="path2"></span>
+                            </span>
+                        </span>
+                        <span class="trip-assignment__accordion-icon">
+                            <i class="orion-icon orion-icon-chevron_open"></i>
+                            <i class="orion-icon orion-icon-chevron_close"></i>
+                        </span>
+                    </button>
+                    <div class="trip-assignment__content">
+                        <div class="shadow">
+                            <div class="trip-assignment__details">
+                                <div class="trip-assignment__filter jc--between">
+                                    <div><a href="#" class="js-modal-uid-765858768">Time Types</a> (Local, Est-Act)</div>
+                                    <orion-modal id="modal-uid-765858768"  style="--orion-modal-max-height-mobile:95%; --orion-modal-height-mobile: 610px; --orion-modal-max-height-desktop:95%; " >
+                                        <span slot="orion-modal-title">
+                                            Time Types
+                                        </span>
+                                        <div slot="orion-modal-body">
+                                            <div style="margin-top:12px;"><strong>Convert time zones</strong></div>
+                                            <orion-radio-button-group name="time-zones" value="value-1" >
+                                                <orion-radio-button value="value-1" checked><div style="width:100%">Local Time</div></orion-radio-button>
+                                                <orion-radio-button value="value-2">LBT</orion-radio-button>
+                                                <orion-radio-button value="value-3">Acclimated</orion-radio-button>
+                                            </orion-radio-button-group>
+                                            <br>
+                                            <strong>Convert time types</strong>
+                                            <orion-radio-button-group name="time-types" value="value-2">
+                                                <orion-radio-button value="value-1">Sceduled</orion-radio-button>
+                                                <orion-radio-button value="value-2" checked>Estimated-Actual (Est-Act)</orion-radio-button>
+                                                <orion-radio-button value="value-3">Created</orion-radio-button>
+                                            </orion-radio-button-group>
+                                        </div>
+                                        <span slot="orion-modal-secondary-button">
+                                            Cancel
+                                        </span>
+                                        <span slot="orion-modal-primary-button">
+                                            OK
+                                        </span>
+                                    </orion-modal>
+
+                                    <div>
+                                        <a href="#" class="js-modal-uid-iiuaf797">Print/Save</a>
+                                        <orion-modal id="modal-uid-iiuaf797"  style="--orion-modal-max-height-mobile:95%; --orion-modal-height-mobile: 500px; --orion-modal-max-height-desktop:95%;" >
+                                            <span slot="orion-modal-title">
+                                                Print/Save
+                                            </span>
+                                            <div slot="orion-modal-body">
+                                                
+                                                <orion-label>You can select multiple options:</orion-label>
+                                                <orion-checkbox-group>
+                                                    <orion-checkbox name="checkbox" value="1">Basic information</orion-checkbox>
+                                                    <orion-checkbox name="checkbox" value="2">Layouver information</orion-checkbox>
+                                                    <orion-checkbox name="checkbox" value="3">Crew information</orion-checkbox>
+                                                    <orion-checkbox name="checkbox" value="3">Crew and pay summary</orion-checkbox>
+                                                    <orion-checkbox name="checkbox" value="3">All trip details</orion-checkbox>
+                                                </orion-checkbox-group>
+                                            </div>
+                                            <span slot="orion-modal-secondary-button">
+                                                Cancel
+                                                </span>
+                                            <span slot="orion-modal-primary-button">
+                                                Save
+                                            </span>
+                                        </orion-modal>
+                                    </div>
+            
+                                </div>
+                                <div class="trip-assignment__content-row jc--flex-start">
+                                    <div>
+                                        <span class="trip-assignment__details-label">Report</span>
+                                        <span><strong>10:20/27 (SFO)</strong><small>E</small></span>
+                                    </div>
+                                    <div>
+                                        <span class="trip-assignment__details-label">Release</span>
+                                        <span><strong>21:33/01</strong><small>E</small></span>
+                                    </div>
+                                    <div class="trip-assignment__divider"></div>
+                                    <div>
+                                        <span class="trip-assignment__details-label">Block</span>
+                                        <span><strong>16:23</strong><small>E</small></span>
+                                    </div>
+                                    <div>
+                                        <span class="trip-assignment__details-label">PTC</span>
+                                        <span><strong>17:44</strong><small>E</small></span>
+                                    </div>
+                                    <div class="trip-assignment__divider hidden-sm hidden-md"></div>
+                                    <div class="trip-assignment__content-row-stack-row">
+                                        <div class="trip-assignment__content-row jc--flex-start">
+                                            <div>
+                                                <span class="trip-assignment__details-label">Pos (PPU)</span>
+                                                <span><strong>CA01 (25%)</strong></span>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__details-label">Layovers</span>
+                                                <span><strong>MSP, MFR</strong></span>
+                                            </div>
+                                            <div class="trip-assignment__door-codes">
+                                                <a href="#">Door Codes</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+            
+                            <div class="trip-assignment__duty">
+                                <div class="trip-assignment__duty-header">
+                                    <div class="jc--flex-start">
+                                        <div class="trip-assignment__duty-number">
+                                            <strong class="color-red">Duty 1</strong> 
+                                            <strong>&middot;</strong>
+                                            <span>27Feb</span>
+                                            <div class="trip-assignment__duty-number-icons">
+                                                <span class="icon-legality-violation js-modal-1483-legality pointer"><span class="path1"></span><span class="path2"></span></span>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-header-details">
+                                            <div>
+                                                <span class="trip-assignment__duty-label font-weight-600">Report:</span> 
+                                                <span><strong class="font-weight-700">10:20</strong></span>A
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__duty-label">Release:</span> <strong>23:05</strong><small>A</small>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__duty-label">Block:</span> <strong>07:08</strong><small>A</small>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__duty-label">Duty:</span> <strong>10:45</strong><small>A</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="trip-assignment__phone">
+                                        <span class="color-gray-60">Ops (SFO):</span> <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                    </div>
+                                </div>
+                                <div class="trip-assignment__flight border-left-gray">
+                                    <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                        <span class="trip-assignment__content-row jc--flex-start">
+                                            <span>
+                                                <span class="font-weight-700 color-red">UA1483</span> <strong>&middot; 27Feb</strong><br>
+                                                <span>20S | 4285</span>
+                                            </span>
+                                            <span>
+                                                <span class="font-weight-700">SFO</span> F4<br>
+                                                <strong>11:20</strong><small>A</small>
+                                            </span>
+                                            <span class="trip-assignment__divider--dash"></span>
+                                            <span>
+                                                <span class="font-weight-700">ABQ</span> A2<br>
+                                                <strong>14:38</strong><small>A</small>
+                                            </span>
+                                            <span>
+                                                <span class="trip-assignment__details-label">Block</span><br>
+                                                <strong>02:18</strong><small>A</small>
+                                            </span>
+                                            <span>
+                                                <span class="trip-assignment__details-label">Sit</span><br>
+                                                <strong>01:03</strong><small>A</small>
+                                            </span>
+                                        </span>
+                                        <span class="trip-assignment__accordion-icon">
+                                            <i class="orion-icon orion-icon-chevron_open"></i>
+                                            <i class="orion-icon orion-icon-chevron_close"></i>
+                                        </span>
+                                    </button>
+            
+                                    <div class="trip-assignment__content">
+            
+                                        <div class="trip-assignment__flight-status">
+                                            <div class="trip-assignment__flight-status-chip">LANDED</div>
+                                            <div class="trip-assignment__trip-icons">
+                                                <div>
+                                                    <orion-popover popper-width="140" placement="left-end">
+                                                        <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                        <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                    </orion-popover>
+                                                </div>
+                                                <div>
+                                                    
+                                                    <span class="icon-legality-violation js-modal-1483-legality pointer"><span class="path1"></span><span class="path2"></span></span>
+                                                    <orion-modal id="modal-1483-legality">
+                                                        <span slot="orion-modal-title">
+                                                            Flight Legality
+                                                        </span>
+                                                        <div slot="orion-modal-body">
+                                                            <strong>1483/STN MAX FLT SCHEDULED</strong><br>
+                                                            Scheduled flight time exceeds the maximum allowed
+                                                        </div>
+                                                        <span slot="orion-modal-primary-button">
+                                                            OK
+                                                        </span>
+                                                    </orion-modal>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+            
+                                        <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                            <div class="trip-assignment__flight-expandables-links js-tabs">
+                                                <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                                <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                                <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                            </div>
+            
+                                            <div class="trip-assignment__flight-expandables-content">
+            
+            
+                                                <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+            
+                                                    <!-- <Flight expandables/Details offline> -->
+                                                    
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display: none;">
+                                                        Details are not available offline.
+                                                    </div>   
+                                                    
+                                                    <!-- </Flight expandables/Details offline> -->
+            
+            
+                                                    <!-- <Flight expandables/Details Unable to load> -->
+                                                    
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display: none;">
+                                                        <div class="flex-col flex-col-center color-gray-60">
+                                                            <i class="orion-icon orion-icon-alert font-size-16 mb-6"></i>
+                                                            <div class="font-size-16 mb-6">Unable to load</div>
+                                                            <small>Placeholder text for additional info</small>
+                                                        </div>
+                                                        
+                                                    </div>   
+                                                    
+                                                    <!-- </Flight expandables/Details Unable to load> -->
+            
+                                                    <!-- <Flight expandables/Details loading> -->
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display: none;">
+                                                        <div class="loading-icon"><img src="/assets/loading.gif" alt=""></div>
+                                                    </div>  
+                                                    <!-- </Flight expandables/Details loading> -->
+            
+            
+            
+                                                    <!-- <Flight expandables/Details> -->
+                                                    
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display:none; display: block;">
+                                                        <div  class="trip-assignment__flight-expandables-content-heading">Plane Info</div>
+                                                        <div class="trip-assignment__flight-expandables-plane-info ">
+                                                            <div>Inbound: <span class="font-weight-700">UA2408</span> · 27Feb</div>
+                                                            <div><span class="font-weight-700">ORD</span> <strong>08:55</strong><small>A</small> </div>
+                                                            <div><span class="font-weight-700">SFO</span> <strong>12:18</strong><small>E</small></div>
+                                                            <a href="#" class="external-link"><i class="orion-icon orion-icon-detach font-size-16"></i>A/C has MEL issues</a>
+                                                        </div>
+                                                        
+                                                    </div>
+            
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display:none; display: block;">
+                                                        <div  class="trip-assignment__flight-expandables-content-heading">Flight Info</div>
+                                                        <div class="trip-assignment__flight-expandables-flight-info ">
+                                                            <div>CCO, Most restrictive clock:</div>
+                                                            <a href="#" class="external-link"><i class="orion-icon orion-icon-detach font-size-16"></i>CCO Details</a>
+                                                            <div><strong>Duty CCO 13:19/11</strong></div>
+                                                        </div>
+                                                        
+                                                        <div class="mt-16">
+                                                            <span class="mr-16">Wheels up: <strong>12:31</strong><small>E</small></span>
+                                                            <span>Leg Overs: <strong>11:11</strong><small>E</small></span>
+                                                        </div>
+                                                    </div>
+            
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display:none; display: block;">
+                                                        <div  class="trip-assignment__flight-expandables-content-heading">Passenger Info</div>
+                                                        <div><small>PBTs:</small> <strong><span class="mr-5">Capacity</span> 28/0/336 | <span class="mr-5">Booked</span> 26/0/316</strong></div>
+                                                        <div class="dashed-line mt-8 mb-10"></div>
+                                                        Flight deck jumpseat:
+                                                        <div class="jc--flex-start gap-64 mt-4">
+                                                            <div class="flex-col"><small>Priority</small><strong class="mt-4">SJ1A</strong></div>
+                                                            <div class="flex-col"><small>Company</small><strong class="mt-4">United</strong></div>
+                                                            <div class="flex-col"><small>Traveler</small><strong class="mt-4">Sam, A.</strong></div>
+                                                        </div>
+                                                        <div class="dashed-line mt-8 mb-10"></div>
+                                                        Cabin jumpseat:
+                                                        <div class="jc--flex-start gap-64 mt-4">
+                                                            <div class="flex-col"><small>Priority</small><strong class="mt-4">SJ2G</strong></div>
+                                                            <div class="flex-col"><small>Company</small><strong class="mt-4">United</strong></div>
+                                                            <div class="flex-col"><small>Traveler</small><strong class="mt-4">Jason,K.</strong></div>
+                                                        </div>
+                                                        <div class="dashed-line mt-8 mb-10"></div>
+                                                        Cabin seat:
+                                                        
+                                                        <div id="cabinSeats" class="trip-assignment__flight-expandables-table">
+                                                            <div class="trip-assignment__flight-expandables-table-header">
+                                                                <div><small>Priority</small></div>
+                                                                <div><small>Board Date</small></div>
+                                                                <div><small>Seats</small></div>
+                                                                <div><small>Service</small></div>
+                                                                <div><small>Traveler</small></div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row">
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row">
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row">
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row" hidden>
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row" hidden>
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-table-row" hidden>
+                                                                <div>SA0V</div>
+                                                                <div>20NOV2012</div>
+                                                                <div>1</div>
+                                                                <div>FIRST</div>
+                                                                <div>MSW, G</div>
+                                                            </div>
+            
+                                                        </div>
+            
+                                                        <a class="js-expand-cabin-table no-underline inline-block mt-10">See all <span class="js-number-of-cabin-seats"></span> cabin seats</a>
+                                                    </div> 
+                                                    
+                                                    <!-- </Flight expandables/Details> -->
+                                                </div>
+            
+            
+                                                
+                                                <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+            
+                                                    <!-- <Flight expandables/State=Crew> -->
+                                                    <div class="trip-assignment__flight-expandables-content-section pb-16">
+                                                        <a class="ml-4" href="#">Contact entire flight deck</a>
+                                                    </div>
+                                                    
+                                                    <div class="trip-assignment__flight-expandables-content-pad" style="display:none; display:block;">
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Henry Wilcott">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading">
+                                                                    <strong>Henry Wilcott</strong> 
+                                                                    <a class="js-modal-crew-u123456" href="#">(U123456)</a>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">CA01 | F1082 · 27Feb</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="140" placement="left-end">
+                                                                        <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                                        <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover>
+                                                                        <div slot="orion-popover-body">
+                                                                            Contact 1<br>
+                                                                            Contact 2<br>
+                                                                            Contact 3<br>
+                                                                            Contact 4
+                                                                        </div>
+                                                                        <span class="icon-phone"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Matthew Thompson">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>Matthew Thompson</strong> <a class="js-link" href="#">(U123456)</a></div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">FO01 | F1082 · 27Feb</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="91" placement="left-end">
+                                                                        <div slot="orion-popover-body">Buddy List</div>
+                                                                        <i class="orion-icon orion-icon-traveler_group"></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover>
+                                                                        <div slot="orion-popover-body">
+                                                                            Contact 1<br>
+                                                                            Contact 2<br>
+                                                                            Contact 3<br>
+                                                                            Contact 4
+                                                                        </div>
+                                                                        <span class="icon-phone"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Andrea Henderson">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>Andrea Henderson</strong> <a class="js-link" href="#">(U123456)</a></div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">FM01 | <a href="#" class="js-link">W1163</a> · 27Feb</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover>
+                                                                        <div slot="orion-popover-body">
+                                                                            Contact 1<br>
+                                                                            Contact 2<br>
+                                                                            Contact 3<br>
+                                                                            Contact 4
+                                                                        </div>
+                                                                        <span class="icon-phone"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Micah Johnson">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>Micah Johnson</strong> <a class="js-link" href="#">(U123456)</a></div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">FA01 | <a class="js-link" href="#">W1163</a> · 27Feb</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover>
+                                                                        <div slot="orion-popover-body">
+                                                                            Contact 1<br>
+                                                                            Contact 2<br>
+                                                                            Contact 3<br>
+                                                                            Contact 4
+                                                                        </div>
+                                                                        <span class="icon-phone"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Marcelo Dominicci">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>Marcelo Dominicci</strong> <a class="js-link" href="#">(U123456)</a></div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">LS01 | <a class="js-link" href="#">W1163</a> · 27Feb</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="91" placement="left-end">
+                                                                        <div slot="orion-popover-body">Deadhead</div>
+                                                                        <i class="icon-DH"><span class="path1"></span><span class="path2"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover>
+                                                                        <div slot="orion-popover-body">
+                                                                            Contact 1<br>
+                                                                            Contact 2<br>
+                                                                            Contact 3<br>
+                                                                            Contact 4
+                                                                        </div>
+                                                                        <span class="icon-phone"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                <img src="/assets/profile-photo-gray.png" alt="Open">
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-heading">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>OPEN</strong></div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">FA03 |F1082 · 27Feb</div>
+                                                            </div>
+                                                        </div>
+            
+                                                    </div>
+                                                    <!-- </Flight expandables/State=Crew> -->
+                                                    
+            
+                                                    <!-- <Flight expandables/State=Crew loading> -->
+                                                    <div class="trip-assignment__flight-expandables-content-section" style="display: none;">
+                                                        <div class="loading-icon"><img src="/assets/loading.gif" alt=""></div>
+                                                    </div>  
+                                                    <!-- </Flight expandables/State=Crew loading> -->
+                                                    
+            
+            
+                                                </div>
+                                                
+            
+            
+                                                <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        <a href="#" class="js-link external-link"><i class="orion-icon orion-icon-detach font-size-16"></i>Chef's Tips</a>
+                                                    </div>
+            
+            
+            
+                                                    <!-- <State=Meals, Meals=on> -->
+                                                    <div class="trip-assignment__flight-expandables-content-pad" style="display: none; display: block;">
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                L
+                                                            </div>
+                                                            <div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>GFML: Gluten Free Meal</strong> 
+                                                                    <a href="#" class="js-modal-uid-ad65s87 edit-meal">
+                                                                        <i class="orion-icon orion-icon-edit"></i>
+                                                                    </a>
+            
+                                                                    <orion-modal id="modal-uid-ad65s87"  style="--orion-modal-max-height-desktop:95%" is-fullscreen-mobile >
+                                                                        <div slot="orion-modal-title">
+                                                                            Select Special Meal <span class="color-gray-40 font-weight-400">(Lunch)</span><br>
+                                                                            <p class="modal-subtitle">Default selections can be updated in My Preferences</p>
+                                                                        </div>
+                                                                        <div slot="orion-modal-body">
+                                                                            <orion-radio-button-group name="meals" value="value-2" >
+                                                                                <orion-radio-button value="value-1" checked>No special meal preference</orion-radio-button>
+                                                                                <orion-radio-button value="value-2">GFML: Gluten Free Meal</orion-radio-button>
+                                                                                <orion-radio-button value="value-3">HNML: Hindu Meal</orion-radio-button>
+                                                                                <orion-radio-button value="value-4">KSML: Kosher Meal</orion-radio-button>
+                                                                                <orion-radio-button value="value-5">MOML: Muslim Meal</orion-radio-button>
+                                                                                <orion-radio-button value="value-6">VGML: Vegetarian Strict Meal</orion-radio-button>
+                                                                                <orion-radio-button value="value-7">AVML: Asian Vegetarian Meal</orion-radio-button>
+                                                                                <orion-radio-button disabled value="value-8">VJML: Jain Meal - To/From India only</orion-radio-button>
+                                                                                <div class="meal-error">Must be selected at least 48 hr before your flight</div>
+                                                                                <orion-radio-button value="value-9">LML: Vegetarian Lacto-Ovo Meal</orion-radio-button>
+                                                                            </orion-radio-button-group>
+            
+                                                                        </div>
+                                                                        <span slot="orion-modal-secondary-button">
+                                                                            Cancel
+                                                                            </span>
+                                                                        <span slot="orion-modal-primary-button">
+                                                                            Save
+                                                                        </span>
+                                                                    </orion-modal>
+
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                S
+                                                            </div>
+                                                            <div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>SAML: Salad Meal</strong>
+                                                                    <a href="#" class="edit-meal js-link">
+                                                                        <i class="orion-icon orion-icon-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                    </div> 
+                                                    <!-- </State=Meals, Meals=on> -->
+            
+            
+                                                    <!-- <State=Meals add, Meals=on> -->
+                                                    <div class="trip-assignment__flight-expandables-content-pad" style="display:none;">
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                L
+                                                            </div>
+                                                            <div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><a href="" class="no-underline js-link"><strong>Add special meal preference for flight</strong></a> 
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb">
+                                                                S
+                                                            </div>
+                                                            <div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>SAML: Salad Meal</strong>
+                                                                    <a href="#" class="js-link edit-meal">
+                                                                        <i class="orion-icon orion-icon-edit"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                    </div>
+                                                    <!-- </State=Meals add, Meals=on> -->
+            
+                                                    <!-- <State=Meals <24 hr, Meals=on> -->
+                                                    <div class="trip-assignment__flight-expandables-content-pad" style="display:none;">
+                                                        <div class="trip-assignment__flight-expandables-notice">Special meal(s) must be selected 24 hours prior to the meal boarded flight.</div>
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb opacity-50">
+                                                                L
+                                                            </div>
+                                                            <div class="opacity-50">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>GFML: Gluten Free Meal</strong> 
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                        <span class="icon-price"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                        <div class="dashed-line"></div>
+            
+                                                        <div class="trip-assignment__flight-expandables-content-row">
+                                                            <div class="trip-assignment__flight-expandables-content-thumb opacity-50">
+                                                                S
+                                                            </div>
+                                                            <div class="opacity-50">
+                                                                <div class="trip-assignment__flight-expandables-content-row-heading"><strong>SAML: Salad Meal</strong>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                            </div>
+                                                            <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                <div>
+                                                                    <orion-popover popper-width="83" placement="left-end">
+                                                                        <div slot="orion-popover-body">Pilot Paid</div>
+                                                                        <span class="icon-price color-rhapsody-blue"></span>
+                                                                    </orion-popover>
+                                                                </div>
+                                                                <div>
+                                                                    <orion-popover popper-width="198">
+                                                                        <div slot="orion-popover-body">
+                                                                            Meal Committee Exception
+                                                                        </div>
+                                                                        <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                    </orion-popover>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+            
+                                                    </div>
+                                                    <!-- </State=Meals <24 hr, Meals=on> -->
+            
+                                                    <!-- <State=Meals past flight, Meals=on> -->
+                                                        <div class="trip-assignment__flight-expandables-content-pad" style="display:none;">
+                                                            <div class="trip-assignment__flight-expandables-content-row">
+                                                                <div class="trip-assignment__flight-expandables-content-thumb opacity-50">
+                                                                    L
+                                                                </div>
+                                                                <div class="opacity-50">
+                                                                    <div class="trip-assignment__flight-expandables-content-row-heading"><strong>GFML: Gluten Free Meal</strong> 
+                                                                    </div>
+                                                                    <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                    <div>
+                                                                        <orion-popover popper-width="83" placement="left-end">
+                                                                            <div slot="orion-popover-body">Pilot Paid</div>
+                                                                            <span class="icon-price color-rhapsody-blue"></span>
+                                                                        </orion-popover>
+                                                                    </div>
+                                                                    <div>
+                                                                        <orion-popover popper-width="198">
+                                                                            <div slot="orion-popover-body">
+                                                                                Meal Committee Exception
+                                                                            </div>
+                                                                            <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                        </orion-popover>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="dashed-line"></div>
+            
+                                                            <div class="trip-assignment__flight-expandables-content-row">
+                                                                <div class="trip-assignment__flight-expandables-content-thumb opacity-50">
+                                                                    S
+                                                                </div>
+                                                                <div class="opacity-50">
+                                                                    <div class="trip-assignment__flight-expandables-content-row-heading"><strong>SAML: Salad Meal</strong>
+                                                                    </div>
+                                                                    <div class="trip-assignment__flight-expandables-content-row-sub-heading">Applied by system 22Feb23 07:55AM GMT</div>
+                                                                </div>
+                                                                <div class="trip-assignment__flight-expandables-content-crew-icons">
+                                                                    <div>
+                                                                        <orion-popover popper-width="83" placement="left-end">
+                                                                            <div slot="orion-popover-body">Pilot Paid</div>
+                                                                            <span class="icon-price color-rhapsody-blue"></span>
+                                                                        </orion-popover>
+                                                                    </div>
+                                                                    <div>
+                                                                        <orion-popover popper-width="198">
+                                                                            <div slot="orion-popover-body">
+                                                                                Meal Committee Exception
+                                                                            </div>
+                                                                            <i class="icon-EXC"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                                        </orion-popover>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                        </div>
+                                                    <!-- </State=Meals past flight, Meals=on> -->
+            
+                                                    <!-- <Flight expandables/State=Meals load> -->
+                                                        <div class="trip-assignment__flight-expandables-content-section" style="display: none;">
+                                                            <div class="loading-icon"><img src="/assets/loading.gif" alt=""></div>
+                                                        </div>  
+                                                    <!-- </Flight expandables/State=Meals load> -->
+                                                                                                    
+            
+                                                </div>
+                                            </div>
+            
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="trip-assignment__flight border-left-gray">
+                                    <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                        <span class="trip-assignment__content-row jc--flex-start">
+                                            <span>
+                                                <span class="font-weight-700">UA0203</span> <strong>&middot; 27Feb</strong><br>
+                                                <span>20S | 4285</span>
+                                            </span>
+                                            <span>
+                                                <span class="font-weight-700">ABQ</span> A2<br>
+                                                <strong>15:41</strong><small>A</small>
+                                            </span>
+                                            <span class="trip-assignment__divider--dash"></span>
+                                            <span>
+                                                <span class="font-weight-700">IAH</span> C8<br>
+                                                <strong>18:45</strong><small>A</small>
+                                            </span>
+                                            <span>
+                                                <span class="trip-assignment__details-label">Block</span><br>
+                                                <strong>02:04</strong><small>A</small>
+                                            </span>
+                                            <span>
+                                                <span class="trip-assignment__details-label">Sit</span><br>
+                                                <strong>01:05</strong><small>A</small>
+                                            </span>
+                                        </span>
+                                        <span class="trip-assignment__accordion-icon">
+                                            <i class="orion-icon orion-icon-chevron_open"></i>
+                                            <i class="orion-icon orion-icon-chevron_close"></i>
+                                        </span>
+                                    </button>
+            
+                                    <div class="trip-assignment__content">
+            
+                                        <a class="js-link trip-assignment__flight-status-link" href="#" id="crew-lounge-info">Crew Lounge information</a>
+            
+                                        <orion-modal id="modal-lounge-info">
+                                            <span slot="orion-modal-title">
+                                                Crew Lounge information
+                                            </span>
+                                            <span slot="orion-modal-body">
+                                                The pilot lounge and TV room are attached to the flight planning area. It can be accessed through the flight planning area interior door or from the adjacent hallway.
+                                            </span>
+                                            <span slot="orion-modal-primary-button">
+                                                OK
+                                            </span>
+                                        </orion-modal>
+                                        
+                                        <div class="trip-assignment__flight-status jc--flex-start">
+            
+                                            <div class="trip-assignment__flight-status-chip bg-green">On time</div>
+                                            <div class="trip-assignment__flight-status-details">Inbound: <span class="color-green font-weight-700">ON TIME</span></div>
+                                            
+                                            <div class="trip-assignment__trip-icons">
+                                                <div>
+                                                    <orion-popover popper-width="140" placement="left-end">
+                                                        <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                        <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                    </orion-popover>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                            <div class="trip-assignment__flight-expandables-links js-tabs">
+                                                <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                                <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                                <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                            </div>
+                                            <div class="trip-assignment__flight-expandables-content">
+            
+                                                <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        Details info
+                                                    </div>
+                                                </div>
+            
+                                                <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        Crew info
+                                                    </div>
+                                                </div>
+            
+                                                <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        Meals info
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trip-assignment__flight border-left-gray">
+                                    <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                        <span class="trip-assignment__content-row jc--flex-start">
+                                            <span>
+                                                <span class="font-weight-700">UA1360</span> <strong>&middot; 27Feb</strong><br>
+                                                <span>19G | 4285</span>
+                                            </span>
+                                            <span>
+                                                <span class="font-weight-700">IAH</span> A2<br>
+                                                <strong>19:50</strong><small>A</small>
+                                            </span>
+                                            <span class="trip-assignment__divider--dash"></span>
+                                            <span>
+                                                <span class="font-weight-700">MSP</span> E6<br>
+                                                <strong>22:42</strong><small>A</small>
+                                            </span>
+                                            <span>
+                                                <span class="trip-assignment__details-label">Block</span><br>
+                                                <strong>02:52</strong><small>A</small>
+                                            </span>
+                                        </span>
+                                        <span class="trip-assignment__accordion-icon">
+                                            <i class="orion-icon orion-icon-chevron_open"></i>
+                                            <i class="orion-icon orion-icon-chevron_close"></i>
+                                        </span>
+                                    </button>
+                                    <div class="trip-assignment__content">
+                                        <div class="trip-assignment__flight-status">
+            
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                            <div class="trip-assignment__flight-expandables-links js-tabs">
+                                                <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                                <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            </div>
+                                            <div class=" trip-assignment__flight-expandables-content">
+            
+                                                <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        Details info
+                                                    </div>
+                                                </div>
+            
+                                                <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                    <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                    <div class="trip-assignment__flight-expandables-content-section">
+                                                        Crew info
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="trip-assignment__duty-layover border-left-blue--dashed">
+            
+                                    <button type="button" class="trip-assignment__duty-layover-header js-collapsible jc--between">
+                                        <span>
+                                            <span class="font-weight-700 mr-5">Layover</span>
+                                            <strong>27Feb - 28Feb (15:18<span class="fw-400">E</span>)</strong> at <strong>MSP</strong>
+                                        </span>
+                                        <span>
+                                            <span class="details_open">Details</span>
+                                            <span class="details_close">Collapse</span>
+                                        </span>
+                                    </button>
+            
+                                    <div class="trip-assignment__content">
+                                        <div class="trip-assignment__duty-layover-content">
+                                            <div class="trip-assignment__duty-layover-content-title">
+                                                <span class="trip-assignment__duty-layover-content-title-icon">
+                                                    <i class="icon-bus color-black"></i>
+                                                </span>
+                                                Cascade Airport Shuttle
+                                            </div>
+                                            <div class="jc--between">
+                                                <div class="trip-assignment__duty-layover-content-voucher">
+                                                    Voucher: <strong>MFR2022070029</strong>
+                                                </div>
+                                                <div class="trip-assignment__phone">
+                                                    <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                                </div>
+                                            </div>
+                                            <div class="trip-assignment__duty-layover-content-pickup">
+                                                <div>
+                                                    <strong>Pickup information text here</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="trip-assignment__duty-layover-content">
+                                            <div class="trip-assignment__duty-layover-content-title">
+                                                <span class="trip-assignment__duty-layover-content-title-icon">
+                                                    <i class="icon-building color-black"></i>
+                                                </span>
+                                                Courtyard by Marriott Medford Airport
+                                            </div>
+                                            <div class="jc--between">
+                                                <div class="trip-assignment__duty-layover-content-voucher">
+                                                    Voucher: <strong>MFR2022070029</strong>
+                                                </div>
+                                                <div class="trip-assignment__phone">
+                                                    <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                                </div>
+                                            </div>
+                                            <div class="trip-assignment__duty-layover-content-code">
+                                                Code: <strong>MAE</strong>
+                                            </div>
+                                            <div class="trip-assignment__duty-layover-content-address">
+                                                <span>Address:</span>
+                                                <span>
+                                                    <strong>Liberty International Airport, 1 Hotel Rd,<br />Medford, OR 07114</strong>
+                                                </span>
+                                            </div>
+                                        </div>
+            
+                                        <div class="trip-assignment__duty-layover-content">
+                                            <div class="trip-assignment__duty-layover-content-title">
+                                                <span class="trip-assignment__duty-layover-content-title-icon">
+                                                    <i class="icon-bus color-black"></i>
+                                                </span>
+                                                    Cascade Airport Shuttle
+                                            </div>
+                                            <div class="jc--between">
+                                                <div class="trip-assignment__duty-layover-content-voucher">
+                                                    Voucher: <strong>MFR2022070029</strong>
+                                                </div>
+                                                <div class="trip-assignment__phone">
+                                                    <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                                </div>
+                                            </div>
+                                            <div class="trip-assignment__duty-layover-content-pickup">
+                                                <div>
+                                                    <strong>Pickup information text here</strong>
+                                                </div>
+                                                <div class="trip-assignment__duty-layover-content-pickup-time">Pickup time is 
+                                                    <strong>01MAR 11:50</strong><small>E</small>
+                                                </div>
+                                            </div>
+                                        </div>
+            
+                                        <div class="trip-assignment__duty-layover-hotel-claim jc--between">
+                                            <div>
+                                                <a class="js-link" href="#">Submit hotel claim</a>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <span class="color-gray-60">Hotel desk:</span> <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trip-assignment__duty shadow">
+                            <div class="trip-assignment__duty-header">
+                                <div class="jc--flex-start">
+                                    <div class="trip-assignment__duty-number">
+                                        <strong>Duty 2</strong> 
+                                        <strong>&middot;</strong> 
+                                        <span>28Feb</span>
+                                    </div>
+                                    <div class="trip-assignment__duty-header-details">
+                                        <div>
+                                            <span class="trip-assignment__duty-label font-weight-600">Report:</span> 
+                                            <span><strong class="font-weight-700">14:15</strong></span>A
+                                        </div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Release:</span> 
+                                            <strong>22:01</strong><small>E</small>
+                                        </div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Block:</span> 
+                                            <strong>05:29</strong><small>E</small>
+                                        </div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Duty:</span> 
+                                            <strong>09:46</strong><small>E</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trip-assignment__phone">
+                                    <span class="color-gray-60">Ops (MSP):</span><a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                </div>
+        
+                            </div>
+                            <div class="trip-assignment__flight border-left-orange">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start">
+                                        <span>
+                                            <span class="font-weight-700">UA1481</span> <strong>&middot; 28Feb</strong><br>
+                                            <span>19G | 4882</span>
+                                        </span>
+                                        <span>
+                                            <span class="font-weight-700">MSP</span> E7<br>
+                                            <strong class="color-orange">15:00<span class="font-weight-400"><small>E</small></span></strong>
+                                        </span>
+                                        <span class="trip-assignment__divider--dash"></span>
+                                        <span>
+                                            <span class="font-weight-700">SFO</span> F21<br>
+                                            <strong class="color-orange">17:08<span class="font-weight-400"><small>E</small></span></strong>
+                                        </span>
+                                        <span>
+                                        <span class="trip-assignment__details-label">Block</span><br>
+                                            <strong>04:08</strong><small>E</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Sit</span><br>
+                                            <strong>03:17</strong><small>E</small>
+                                        </span>
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    
+                                    
+        
+        
+                                    <!-- <Day Room LESS THAN 48hrs> -->
+        
+                                    <!-- 
+                                        
+                                    <a class="trip-assignment__flight-status-link js-modal-uid-2" href="#">Day room request</a> 
+        
+                                    <orion-modal id="modal-uid-2">
+                                        <span slot="orion-modal-title">
+                                            Day Room Request
+                                        </span>
+                                        <div slot="orion-modal-body">
+                                            Please call <a href="tel:+7736014326" class="no-underline"><span class="icon-phone"></span> 773-601-4326</a> to submit a day room request within 48 hours.
+                                        </div>
+                                        <span slot="orion-modal-primary-button">
+                                            OK
+                                        </span>
+                                    </orion-modal>
+        
+                                    <script>
+                                        (function () {
+                                            const trigger = document.querySelector('.js-modal-uid-2');
+                                            trigger.onclick = () => {
+                                                const modal2 = document.querySelector('#modal-uid-2');
+                                                modal2.isOpen = !modal2.isOpen;
+                                            };
+        
+                                            document.getElementById('modal-uid-2').addEventListener('orionModalFooterBtnClicked', function (e) { this.isOpen = !this.isOpen;});
+        
+                                        })()
+                                    </script>
+        
+                                    -->
+        
+                                    <!-- </Day Room LESS THAN 48hrs> -->
+        
+        
+                                    <!-- <Day Room MORE THAN 48hrs> -->
+                                    <a class="trip-assignment__flight-status-link js-modal-uid-76sdf7a " href="#">Day room request</a>
+                                
+                                    <orion-modal id="modal-uid-76sdf7a">
+                                        <span slot="orion-modal-title">
+                                            Day Room Request
+                                        </span>
+                                        <div slot="orion-modal-body">
+                                            Do you want to send a day room request?
+                                        </div>
+                                        <span slot="orion-modal-secondary-button">
+                                            Cancel
+                                        </span>
+                                        <span slot="orion-modal-primary-button">
+                                            Send
+                                        </span>
+                                    </orion-modal>
+        
+                                
+                                    <div class="trip-assignment__flight-status">
+                                        <div class="trip-assignment__flight-status-chip bg-orange">Delayed</div>
+                                        <div class="trip-assignment__flight-status-details">Inbound: <span class="color-orange font-weight-700">DELAYED</span></div>
+        
+                                    </div>
+        
+                                    <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                        <div class="trip-assignment__flight-expandables-links js-tabs">
+                                            <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                            <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables-content">
+        
+                                            <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Details info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Crew info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Meals info
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trip-assignment__duty-long-sit border-left-blue--dashed">
+        
+                                <button type="button" class="trip-assignment__duty-long-sit-header js-collapsible jc--between">
+                                    <span>
+                                        <span class="font-weight-700 mr-5">Long Sit</span>
+                                        <strong>11Feb (03:17)</strong> at <strong>MFR</strong>
+                                    </span>
+                                    <span>
+                                        <span class="details_open">Details</span>
+                                        <span class="details_close">Collapse</span>
+                                    </span>
+                                </button>
+        
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__duty-long-sit-content">
+                                        <div class="trip-assignment__duty-long-sit-content-title">
+                                            <span class="trip-assignment__duty-long-sit-content-title-icon">
+                                                <i class="icon-bus color-black"></i>
+                                            </span>
+                                            Transportation
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-long-sit-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-long-sit-content-pickup">
+                                            <div>
+                                                <strong>Pickup information text here</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-long-sit-content">
+                                        <div class="trip-assignment__duty-long-sit-content-title">
+                                            <span class="trip-assignment__duty-long-sit-content-title-icon">
+                                                <i class="icon-building color-black"></i>
+                                            </span>
+                                            Hotel
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-long-sit-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-long-sit-content-code">
+                                            Code: <strong>MAE</strong>
+                                        </div>
+                                        <div class="trip-assignment__duty-long-sit-content-address">
+                                            <span>Address:</span>
+                                            <span>
+                                                <strong>Liberty International Airport, 1 Hotel Rd,<br />Medford, OR 07114</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-long-sit-content">
+                                        <div class="trip-assignment__duty-long-sit-content-title">
+                                            <span class="trip-assignment__duty-long-sit-content-title-icon">
+                                                <i class="icon-bus color-black"></i>
+                                            </span>
+                                                Transportation
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-long-sit-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-long-sit-content-pickup">
+                                            <div>
+                                                <strong>Pickup information text here</strong>
+                                            </div>
+                                            <div class="trip-assignment__duty-long-sit-content-pickup-time">Pickup time is <strong>28Feb 19:50</strong><small>E</small>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-long-sit-hotel-claim jc--between">
+                                        <div>
+                                            <a class="js-link" href="#">Submit hotel claim</a>
+                                        </div>
+                                        <div class="trip-assignment__phone">
+                                            <span class="color-gray-60">Hotel desk:</span> <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                        </div>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+        
+                            <div class="trip-assignment__flight border-left-green">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start">
+                                        <span>
+                                            <span class="font-weight-700">UA0214</span> <strong>&middot; 28Feb</strong><br>
+                                            <span>20S | 4171</span>
+                                        </span>
+                                        <span>
+                                            <span class="font-weight-700">SFO</span> F15<br>
+                                            <strong>20:25</strong><small>E</small>
+                                        </span>
+                                        <span class="trip-assignment__divider--dash"></span>
+                                        <span>
+                                            <span class="font-weight-700">MFR</span> 5<br>
+                                            <strong>21:46</strong><small>E</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Block</span><br>
+                                            <strong>01:21</strong><small>E</small>
+                                        </span>
+        
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__flight-status">
+                                        
+                                        <div class="trip-assignment__trip-icons">
+                                            <div>
+                                                <orion-popover popper-width="140" placement="left-end">
+                                                    <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                    <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                </orion-popover>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                        <div class="trip-assignment__flight-expandables-links js-tabs">
+                                            <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                            <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables-content">
+        
+                                            <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Details info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Crew info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Meals info
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="trip-assignment__duty-layover border-left-blue--dashed">
+        
+                                <button type="button" class="trip-assignment__duty-layover-header js-collapsible jc--between">
+                                    <span>
+                                        <span class="font-weight-700 mr-5">Layover</span>
+                                        <strong>28Feb - 01Mar (15:39<span class="fw-400">E</span>)</strong> at <strong>MFR</strong>
+                                    </span>
+                                    <span>
+                                        <span class="details_open">Details</span>
+                                        <span class="details_close">Collapse</span>
+                                    </span>
+                                </button>
+        
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__duty-layover-content">
+                                        <div class="trip-assignment__duty-layover-content-title">
+                                            <span class="trip-assignment__duty-layover-content-title-icon">
+                                                <i class="icon-bus color-black"></i>
+                                            </span>
+                                            Cascade Airport Shuttle
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-layover-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-layover-content-pickup">
+                                            <div>
+                                                <strong>Pickup information text here</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-layover-content">
+                                        <div class="trip-assignment__duty-layover-content-title">
+                                            <span class="trip-assignment__duty-layover-content-title-icon">
+                                                <i class="icon-building color-black"></i>
+                                            </span>
+                                            Courtyard by Marriott Medford Airport
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-layover-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-layover-content-code">
+                                            Code: <strong>MAE</strong>
+                                        </div>
+                                        <div class="trip-assignment__duty-layover-content-address">
+                                            <span>Address:</span>
+                                            <span>
+                                                <strong>Liberty International Airport, 1 Hotel Rd,<br />Medford, OR 07114</strong>
+                                            </span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-layover-content">
+                                        <div class="trip-assignment__duty-layover-content-title">
+                                            <span class="trip-assignment__duty-layover-content-title-icon">
+                                                <i class="icon-bus color-black"></i>
+                                            </span>
+                                                Cascade Airport Shuttle
+                                        </div>
+                                        <div class="jc--between">
+                                            <div class="trip-assignment__duty-layover-content-voucher">
+                                                Voucher: <strong>MFR2022070029</strong>
+                                            </div>
+                                            <div class="trip-assignment__phone">
+                                                <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                            </div>
+                                        </div>
+                                        <div class="trip-assignment__duty-layover-content-pickup">
+                                            <div>
+                                                <strong>Pickup information text here</strong>
+                                            </div>
+                                            <div class="trip-assignment__duty-layover-content-pickup-time">Pickup time is 
+                                                <strong>01MAR 11:50</strong><small>E</small>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="trip-assignment__duty-layover-hotel-claim jc--between">
+                                        <div>
+                                            <a class="js-link" href="#">Submit hotel claim</a>
+                                        </div>
+                                        <div class="trip-assignment__phone">
+                                            <span class="color-gray-60">Hotel desk:</span> <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                        </div>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div class="trip-assignment__duty shadow">
+                            <div class="trip-assignment__duty-header">
+                                <div class="jc--flex-start">
+                                    <div class="trip-assignment__duty-number">
+                                        <strong>Duty 3</strong> 
+                                        <strong>&middot;</strong> 
+                                        <span>01Mar</span>
+                                    </div>
+                                    <div class="trip-assignment__duty-header-details">
+                                        <div>
+                                            <span class="trip-assignment__duty-label font-weight-600">Report:</span> 
+                                            <span><strong class="font-weight-700">13:40</strong></span>S
+                                        </div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Release:</span> 
+                                            <strong>21:33</strong><small>S</small></div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Block:</span> 
+                                            <strong>05:01</strong><small>S</small></div>
+                                        <div>
+                                            <span class="trip-assignment__duty-label">Duty:</span> 
+                                            <strong>07:53</strong><small>S</small></div>
+                                    </div>
+                                </div>
+                                <div class="trip-assignment__phone">
+                                    <span class="color-gray-60">Ops (MSP):</span>  <a href="tel:+1-773-601-4326"><span class="icon-phone"></span> 773-601-4326</a>
+                                </div>
+                            </div>
+                            <div class="trip-assignment__flight border-left-gray">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start">
+                                        <span>
+                                            <span class="font-weight-700">UX4808</span> <strong>&middot; 01Mar</strong><br>
+                                            <span>E75 <strong>(DH)</strong></span>
+                                        </span>
+                                        <span>
+                                            <span class="font-weight-700">MFR</span><br>
+                                            <strong>14:10<span class="font-weight-400"><small>S</small></span></strong>
+                                        </span>
+                                        <span class="trip-assignment__divider--dash"></span>
+                                        <span>
+                                            <span class="font-weight-700">SFO</span><br>
+                                            <strong>15:31<span class="font-weight-400"><small>S</small></span></strong>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Block</span><br>
+                                            <strong>01:21</strong><small>S</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Sit</span><br>
+                                            <strong>01:06</strong><small>S</small>
+                                        </span>
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__flight-status">
+                                        <div class="trip-assignment__flight-status-chip">LANDED</div>
+                                        <div class="trip-assignment__trip-icons">
+                                            <div>
+                                                <orion-popover popper-width="165" placement="left-end">
+                                                    <div slot="orion-popover-body" class="text-right">Deadhead<br>PNR: <strong>B23451</strong> | Seat <strong>3B</strong></div>
+                                                    <i class="icon-DH"><span class="path1"></span><span class="path2"></span></i>
+                                                </orion-popover>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                        <div class="trip-assignment__flight-expandables-links js-tabs">
+                                            <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                            <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables-content">
+        
+                                            <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Details info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Crew info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Meals info
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trip-assignment__flight border-left-gray">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start">
+                                        <span>
+                                            <span class="font-weight-700">UA1561</span> <strong>&middot; 01Mar</strong><br>
+                                            <span>19F</span>
+                                        </span>
+                                        <span>
+                                            <span class="font-weight-700">SFO</span><br>
+                                            <strong>16:37</strong><small>S</small>
+                                        </span>
+                                        <span class="trip-assignment__divider--dash"></span>
+                                        <span>
+                                            <span class="font-weight-700">PDX</span><br>
+                                            <strong>18:27</strong><small>S</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Block</span><br>
+                                            <strong>01:50</strong><small>S</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Sit</span><br>
+                                            <strong>01:01</strong><small>S</small>
+                                        </span>
+        
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__flight-status">
+                                        
+                                        <div class="trip-assignment__trip-icons">
+                                            <div>
+                                                <orion-popover popper-width="140" placement="left-end">
+                                                    <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                    <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                </orion-popover>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                        <div class="trip-assignment__flight-expandables-links js-tabs">
+                                            <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                            <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables-content">
+        
+                                            <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Details info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Crew info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Meals info
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trip-assignment__flight border-left-gray">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start">
+                                        <span>
+                                            <span class="font-weight-700">UA2482</span> <strong>&middot; 01Mar</strong><br>
+                                            <span>19F</span>
+                                        </span>
+                                        <span>
+                                            <span class="font-weight-700">ABQ</span><br>
+                                            <strong>19:28</strong><small>S</small>
+                                        </span>
+                                        <span class="trip-assignment__divider--dash"></span>
+                                        <span>
+                                            <span class="font-weight-700">IAH</span><br>
+                                            <strong>21:18</strong><small>S</small>
+                                        </span>
+                                        <span>
+                                            <span class="trip-assignment__details-label">Block</span><br>
+                                            <strong>01:50</strong><small>S</small>
+                                        </span>
+        
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__flight-status">
+                                        
+                                        <div class="trip-assignment__trip-icons">
+                                            <div>
+                                                <orion-popover popper-width="140" placement="left-end">
+                                                    <div slot="orion-popover-body">Line Check (Giving)</div>
+                                                    <span class="icon-LCP"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                </orion-popover>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="trip-assignment__flight-expandables js-tabs-wrap">
+                                        <div class="trip-assignment__flight-expandables-links js-tabs">
+                                            <button class="js-tab-link" data-tab="js-tab-1">Details</button>
+                                            <button class="js-tab-link" data-tab="js-tab-2">Crew</button>
+                                            <button class="js-tab-link" data-tab="js-tab-3">Meals</button>
+                                        </div>
+                                        <div class="trip-assignment__flight-expandables-content">
+        
+                                            <div class="js-tab-content js-tab-1 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-details">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Details info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-2 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-crew">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Crew info
+                                                </div>
+                                            </div>
+        
+                                            <div class="js-tab-content js-tab-3 trip-assignment__content-row jc--flex-start trip-assignment__flight-expandables-content-meals">
+                                                <button type="button" class="js-close-expandable trip-assignment__flight-expandables-close-btn" aria-label="Close"><i class="orion-icon-close"></i></button>
+                                                <div class="trip-assignment__flight-expandables-content-section">
+                                                    Meals info
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                        </div>
+                        <div class="shadow">
+                            <div class="trip-assignment__trip-summary">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start trip-assignment__trip-summary-header">
+                                        Trip Summary
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__trip-summary-content">
+                                        
+                                        <div class="trip-assignment__content-row jc--flex-start">
+                                            <div>
+                                                <span class="trip-assignment__details-label">Block</span>
+                                                <div><strong>16:23</strong><small>E</small></div>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__details-label">DH</span>
+                                                <div><strong>03:37</strong><small>E</small></div>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__details-label">RIG</span>
+                                                <div><strong><a href="#" class="js-modal-rig" >05:30</a></strong><small>E</small></div>
+                                            </div>
+                                            <div>
+                                                <span class="trip-assignment__details-label">TAFB</span>
+                                                <div><strong>084:57</strong><small>E</small></div>
+                                            </div>
+                                            <div class="trip-assignment__trip-summary-content-pay-register">
+                                                <a href="#" class="external-link"><i class="orion-icon orion-icon-detach font-size-16"></i>Pay Register</a>
+                                            </div>
+                                        </div>
+        
+                                        <div class="trip-assignment__trip-summary-content-crew-list">
+                                            <div class="trip-assignment__content-row jc--flex-start">
+                                                <small>Crew List</small>
+                                            </div>
+                                            <div class="trip-assignment__content-row jc--between">
+                                                <span><strong>Henry Wilmott 
+                                                    <a class="js-link" href="#">(U123456)</a>
+                                                </strong></span>
+                                                <span>CA01</span>
+                                            </div>
+                                            <div class="trip-assignment__content-row jc--between">
+                                                <span><strong>
+                                                    William Silverspoon 
+                                                    <a class="js-link" href="#">(U123456)</a>
+                                                    </strong></span>
+                                                <span>FO01, RSV</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trip-assignment__trip-comments">
+                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                    <span class="trip-assignment__content-row jc--flex-start trip-assignment__trip-comments-header">
+                                        Trip Comments
+                                    </span>
+                                    <span class="trip-assignment__accordion-icon">
+                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                    </span>
+                                </button>
+                                <div class="trip-assignment__content">
+                                    <div class="trip-assignment__trip-comments-content">
+                                        JAN.30-MSY DAY RMS MARRIOTT MSY<br />
+                                        LAKEWAY 504-836-5253 V#50<br />
+                                        BD/JAN.30
+                                    </div>
+                                </div>     
+                            </div>
+                        </div>
+        
+                        <orion-modal id="modal-crew-u123456" has-cancel-icon is-fullscreen-mobile style="--orion-modal-max-height-mobile:95%; --orion-modal-height-mobile: 704px;  --orion-modal-max-height-desktop:95%; --orion-modal-height-desktop: 880px; " >
+                            <div slot="orion-modal-body" class="modal-crew">
+                                <div class="crew-header jc--flex-start">
+                                    <div class="crew-header__photo">
+                                        <img src="/assets/placeholder-circle-D9D9D9.svg" alt="Henry Wilcott">
+                                    </div>
+                                    <div>
+                                        <div class="crew-header__name"><span>Henry</span><span>Wilmott</span></div>
+                                        <div class="crew-header__details">U123456 | EWR | A320 | CA</div>
+                                        <div class="crew-header__contact-methods">
+                                            <div><img src="/assets/placeholder-circle-F1F1F0.svg" alt=""></div>
+                                            <div><img src="/assets/placeholder-circle-F1F1F0.svg" alt=""></div>
+                                            <div><img src="/assets/placeholder-circle-F1F1F0.svg" alt=""></div>
+                                            <div><img src="/assets/placeholder-circle-F1F1F0.svg" alt=""></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="js-tabs-wrap">
+                                    <div class="crew-tabs js-tabs">
+                                        <button class="js-tab-link active" data-tab="js-tab-1">UA1483</button>
+                                        <button class="js-tab-link" data-tab="js-tab-2">Schedule</button>
+                                        <button class="js-tab-link" data-tab="js-tab-3">Trip History</button>
+                                    </div>
+                                    <div class="crew-tabs__content">
+                                        <div class="js-tab-content js-tab-1">
+                                            <div class="crew-tabs__content-flight-table" >
+                                                <div class="jc--between">
+                                                    <span>Position</span>
+                                                    <span class="font-weight-600">CA01</span>
+                                                </div>
+                                                <div class="jc--between">
+                                                    <span>Trip # & Start Date</span>
+                                                    <span class="font-weight-600">F1082 · 27Feb</span>
+                                                </div>
+                                                <div class="jc--between">
+                                                    <span>Line Check</span>
+                                                    <span class="font-weight-600">Additional info placholder</span>
+                                                </div>
+                                                <div class="jc--between">
+                                                    <span>Deadhead</span>
+                                                    <span class="font-weight-600">N</span>
+                                                </div>
+                                                <div class="jc--between">
+                                                    <span>Inbound Flight </span>
+                                                    <div class="text-right">Status: <strong class="color-green">ON TIME</strong>
+                                                        <div class="mt-6"><strong>UA2408</strong> · 27Feb</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right mb-6" style="margin-top:1px">Sched: <strong>ORD</strong> 08:55 Latest: <strong>SFO</strong> 12:18</div>
+                                        </div>
+                    
+                                        <div class="js-tab-content js-tab-2">
+        
+                                            <div class="crew-tabs__content-schedule">
+                                                GRAPHICAL CALENDAR PLACEHOLDER</div>
+        
+        
+                                        </div>
+                    
+                                        <div class="js-tab-content js-tab-3 crew-tabs__content-history">
+                                            <div class="font-size-16 font-weight-600 ml-8">Previous trips worked together: 6</div>
+                                            <div class="crew-tabs__content-history-table">
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                
+                                                <button type="button" class="trip-assignment__flight-header js-collapsible">
+                                                    <span>
+                                                        <strong>A12345</strong> · 28Feb22  - 01Mar22
+                                                    </span>
+                                                    <span class="trip-assignment__accordion-icon">
+                                                        <i class="orion-icon orion-icon-chevron_open"></i>
+                                                        <i class="orion-icon orion-icon-chevron_close"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="trip-assignment__content">
+                                                    <div class="trip-assignment__flight-expandables-table mt-4">
+                                                        <div class="trip-assignment__flight-expandables-table-header">
+                                                            <div>Flight #</div>
+                                                            <div>Dept Stn</div>
+                                                            <div>Arr Stn</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA1234</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA2345</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                        <div class="trip-assignment__flight-expandables-table-row">
+                                                            <div>UA3456</div>
+                                                            <div>ORD</div>
+                                                            <div>SFO</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                        </orion-modal>
+
+                        <orion-modal id="modal-rig">
+                            <span slot="orion-modal-title">
+                                Total RIG
+                            </span>
+                            <div slot="orion-modal-body" class="orion-container-fluid modal-rig">
+                                <div class="orion-row">
+                                    <div class="orion-col-3">
+                                        Duty 1:
+                                    </div>
+                                    <div class="orion-col-3">
+                                        01:00
+                                    </div>
+                                </div>
+                                <div class="orion-row">
+                                    <div class="orion-col-3">
+                                        Duty 2:
+                                    </div>
+                                    <div class="orion-col-3">
+                                        02:30
+                                    </div>
+                                </div>
+                                <div class="orion-row">
+                                    <div class="orion-col-3">
+                                        Trip:
+                                    </div>
+                                    <div class="orion-col-3">
+                                        02:00
+                                    </div>
+                                </div>
+                                <div class="orion-row">
+                                    
+                                </div>
+                                <div class="orion-row">
+                                    <div class="orion-col-3">
+                                        <strong>Total:</strong>
+                                    </div>
+                                    <div class="orion-col-3">
+                                        <strong>05:30</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <span slot="orion-modal-primary-button">
+                                OK
+                            </span>
+                        </orion-modal>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <!-- Trip Display JS -->
+    <script src="/components/trip-display/trip-display.js"></script>
+
+    <!-- Times Type modal JS -->
+    <script src="/components/trip-display/modal-times-type.js"></script>
+
+    <!-- Print Save modal JS -->
+    <script src="/components/trip-display/modal-print-save.js"></script>
+
+    <!-- Flight Legality modal JS-->
+    <script src="/components/trip-display/modal-flight-legality-1.js"></script>
+
+    <!-- Meal 1 modal JS -->
+    <script src="/components/trip-display/modal-meal-1.js"></script>
+
+    <!-- Crew Lounge Info 1 modal JS -->
+    <script src="/components/trip-display/modal-crew-lounge-info-1.js"></script>
+
+    <!-- Day Room 48+ modal JS -->
+    <script src="/components/trip-display/modal-day-room-48plus-1.js"></script>
+
+    <!-- Crew 1 modal JS -->
+    <script src="/components/trip-display/modal-crew-1.js"></script>
+
+    <!-- Rig 1 modal JS -->
+    <script src="/components/trip-display/modal-rig-1.js"></script>
+
+</body>
+</html>

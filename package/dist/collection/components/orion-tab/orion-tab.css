@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=src/components/orion-tab/orion-tab.css.map */

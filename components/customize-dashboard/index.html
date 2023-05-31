@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 4 - Demo</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Trip Details styles -->
+    <link rel="stylesheet" href="/components/customize-dashboard/customize-dashboard.css">
+
+    <!-- 
+        This method required the Orion Web Components to be installed and updated locally.
+        
+        Step 1. Download the orion package (.tgz file) from the Artifactory Repository Browser.
+        Step 2. Extract the package locally in the demo folder.
+
+        For version #, check:
+        \demo\package\package.json
+     -->
+    <script type="module">
+        import { defineCustomElements } from '/package/loader/index.js';
+        defineCustomElements();
+    </script>
+    
+    
+
+</head>
+
+<body>
+
+    <!-- 
+        Invision: https://unitedux.invisionapp.com/overview/PCCS-Handoff-cl8svrlbo052d012e4m60byci/screens/74163970?sortBy=1&sortOrder=1&viewLayout=2
+    -->
+
+    <orion-button id="open-modal-customize-dashboard">Open modal</orion-button>
+
+    <orion-modal is-fullscreen has-cancel-icon id="modal-customize-dashboard">
+        <div slot="orion-modal-title" class="ml-4">
+            Customize Dashboard<br>
+            <span class="customize-dash__sub-heading">Drag and drop items to reorder your dashboard view</span>
+        </div>
+        <div slot="orion-modal-body" class="orion-container-fluid">
+            <!-- we need to give .orion-modal__body a width of 100% in via web component css -->
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__announcements">
+                    <div class="font-weight-600">
+                    Announcements
+                    </div>
+                    <div>
+                    Unable to edit
+                    </div>
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" checked style="--orion-toggle--vertical-align:center"><strong>Current Event Preview</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item customize-dash__draggable-item--dragging">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" checked style="--orion-toggle--vertical-align:center"><strong>Feature Spotlights</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Pay Summary</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__hover-placeholder">
+            
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                        
+                    <orion-toggle id="comms" justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Comms</strong></orion-toggle>
+                    <script>
+                        (function () {
+                            // capture comms toggle in variable
+                            const commsToggle = document.getElementById('comms');
+                            
+                            // capture the toggle valueChanged event
+                            commsToggle.addEventListener('valueChanged', function (e) {
+
+                                // if the toggle is checked, set active class. 
+                                if (e.detail.checked) {
+                                    this.classList.add('active');
+                                } else {
+                                    // remove active class
+                                    this.classList.remove('active');
+                                }
+                            });
+                        })()
+                    </script>
+                    </div>
+                </div>
+                <div class="customize-dash__option__subgroup">
+                    <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                        <orion-toggle justify checked value="value-1" style="--orion-toggle--vertical-align:center">Priority Messages</orion-toggle>
+                    </div>
+                    </div>
+                    <div class="customize-dash__draggable-item">
+                        <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                        <div class="customize-dash__option">
+                        <orion-toggle justify checked value="value-1" style="--orion-toggle--vertical-align:center">Crew Messages</orion-toggle>
+                    </div>
+                    </div>
+                    <div class="customize-dash__draggable-item">
+                        <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                        <div class="customize-dash__option">
+                        <orion-toggle justify checked value="value-1" style="--orion-toggle--vertical-align:center">Trade Messages & Notif.</orion-toggle>
+                    </div>
+                    </div>
+                    <div class="customize-dash__draggable-item">
+                        <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                        <div class="customize-dash__option">
+                        <orion-toggle justify checked value="value-1" style="--orion-toggle--vertical-align:center">Pilot Bulletins</orion-toggle>
+                    </div>
+                    </div>
+                    <div class="customize-dash__draggable-item">
+                        <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                        <div class="customize-dash__option">
+                        <orion-toggle justify checked value="value-1" style="--orion-toggle--vertical-align:center">General Messages</orion-toggle>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="orion-row orion-no-row-gap">
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+                <div class="orion-col-md-6">
+                <div class="customize-dash__draggable-item">
+                    <div class="customize-dash__draggable-handle"><i class="orion-icon orion-icon-drag"></i></div>
+                    <div class="customize-dash__option">
+                    <orion-toggle justify value="value-1" style="--orion-toggle--vertical-align:center"><strong>Widget placeholder</strong></orion-toggle>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <span slot="orion-modal-button-row">
+            <small>Last updated 01/27/2023 10:30 AM CT</small>
+        </span>
+        <span slot="orion-modal-secondary-button" class="button-2">
+            Secondary
+        </span>
+        <span slot="orion-modal-primary-button">
+            Save
+        </span>
+    </orion-modal>
+
+    <orion-modal id="modal-confirmation">
+        <span slot="orion-modal-title">
+            Are you sure you want to exit?
+        </span>
+        <div slot="orion-modal-body">
+            If you exit without saving all changes will be lost.
+        </div>
+        <span slot="orion-modal-secondary-button">Take me back
+        </span>
+        <span slot="orion-modal-primary-button">
+            Yes, exit
+        </span>
+    </orion-modal>
+
+    <div class="placement-top">
+        <orion-message class="customize-dash__message--saved" id="message-confirmation" variant="success" dismissible is-open>
+            <p>Dashboard customization saved!</p>
+        </orion-message>
+    </div>
+
+
+
+    <script>
+      (function () {
+        const trigger = document.querySelector('#open-modal-customize-dashboard');
+        const modalCustomizeDashboard = document.querySelector('#modal-customize-dashboard');
+        const modalConfirmation = document.querySelector('#modal-confirmation');
+        const messageConfirmation = document.querySelector('#message-confirmation');
+
+        trigger.onclick = () => {
+          modalConfirmation.isOpen = false;
+          modalCustomizeDashboard.isOpen = !modalCustomizeDashboard.isOpen;
+        };
+
+        // captue event orionModalFooterBtnClicked on modal-customize-dashboard
+        modalCustomizeDashboard.addEventListener('orionModalFooterBtnClicked', function (e) {
+            if (e.detail.variant === 'primary') {
+                // close modal-customize-dashboard and open message-confirmation           
+                modalCustomizeDashboard.isOpen = false;
+                messageConfirmation.isOpen = true;
+            }
+            if (e.detail.variant === 'secondary') {
+                // open modal-confirmation
+                modalConfirmation.isOpen = !modalConfirmation.isOpen;
+            }
+        });
+
+        // captue event orionModalFooterBtnClicked on modal-confirmation
+        modalConfirmation.addEventListener('orionModalFooterBtnClicked', function (e) {
+            if (e.detail.variant === 'primary') {
+                // close modal-confirmation and modal-customize-dashboard
+                modalConfirmation.isOpen = false;
+                modalCustomizeDashboard.isOpen = false;
+            }
+            if (e.detail.variant === 'secondary') {
+                // close modal-confirmation
+                modalConfirmation.isOpen = false;
+            }
+        });
+
+    })()
+    </script>
+
+    
+  </body>
+</html>

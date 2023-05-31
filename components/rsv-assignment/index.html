@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#002244">
+    <meta name="color-scheme" content="light dark">
+    <title>Sprint 3 - RSV Assignment</title>
+
+    <!-- Orion global CSS -->
+    <link rel="stylesheet" href="/package/dist/orion-web-components/orion-web-components.css">
+
+    <!-- App global styles -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Card styles -->
+    <link rel="stylesheet" href="/components/card/pccs-card.css">
+
+    <!-- List Group styles -->
+    <link rel="stylesheet" href="/components/list-group/list-group.css">
+
+    <!-- 
+        This method required the Orion Web Components to be installed and updated locally.
+        
+        Step 1. Download the orion package (.tgz file) from the Artifact Repository Browser.
+        Step 2. Extract the package locally in the demo folder.
+
+        For version #, check:
+        \demo\package\package.json
+     -->
+     <script type="module">
+        import { defineCustomElements } from '/package/loader/index.js';
+        defineCustomElements();
+    </script>
+    
+</head>
+<body>
+
+    <div id="current-event-preview">
+        <h2>Current Event Preview</h2>
+        <div class="card card__shadow">
+            <div class="card__header">
+                <div class="card__title">FSB/Field Stand By</div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group__item">
+                    <div class="key-dates__content">
+                        <strong>03Feb  17:00 - 21:00</strong> at <strong>SNA</strong>
+                    </div>
+                </li>
+                <li class="list-group__item">
+                    <div class="key-dates__content">
+                        <a href="#">Door Codes</a>
+                    </div>
+                </li>
+                <li class="list-group__item">
+                    RSV:
+                    <a class="js-modal-uid-7i65858768 float-right" href="#">Acknowledge</a>
+                    <div class="js-RSV-confirmation float-right" style="display: flex; gap: 8px;" hidden>
+                        <i class="orion-icon orion-icon-success font-size-24 flex-col color-green"></i><strong>Acknowledged</strong>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <orion-modal id="modal-uid-7i65858768" has-cancel-icon hidden>
+        <span slot="orion-modal-title">
+            RSV Acknowledgement
+        </span>
+        <div slot="orion-modal-body">
+            <p>Would you like to acknowlege this RSV assignment?</p>
+        </div>
+        <span slot="orion-modal-primary-button">
+            Acknowledge
+        </span>
+    </orion-modal>
+
+
+
+    <!-- RSV Assignment script -->
+    <script src="/components/rsv-assignment/rsv-assignment.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+.feature-spotlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+}
+@media screen and (min-width: 769px) {
+  .feature-spotlights .feature-spotlight {
+    flex-basis: 348px;
+  }
+}
+.feature-spotlights .feature-spotlight__title {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-top: -3px;
+}
+.feature-spotlights .feature-spotlight__description {
+  font-size: 13px;
+  line-height: 16px;
+}
+
+#feature-spotlights .main-content {
+  display: block;
+  max-width: 1505px;
+}
+#feature-spotlights h2 {
+  font-size: 20px;
+  line-height: 27px;
+  margin-top: 16px;
+}/*# sourceMappingURL=feature-spotlights.css.map */
